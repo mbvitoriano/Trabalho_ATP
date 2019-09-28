@@ -51,18 +51,21 @@ namespace caixaEletronico
             Console.Clear();
            
             while (opcaoServico < 6)
-            {
+            {              
                 Console.WriteLine("######################################");
-                Console.WriteLine("# Estes são os Serviços Disponíveis: #");
-                Console.WriteLine("# (1) - Consultar Saldo              #");
-                Console.WriteLine("# (2) - Efetuar um Saque             #");
-                Console.WriteLine("# (3) - Realizar um Depósito         #");
-                Console.WriteLine("# (4) - Efetuar um Pagamento         #");
-                Console.WriteLine("# (5) - Realizar uma Transferência   #");
-                Console.WriteLine("# (6) - Encerrar                     #");
+                Console.WriteLine("Estes são os Serviços Disponíveis: ");
+                Console.WriteLine("(1) - Consultar Saldo");
+                Console.WriteLine("(2) - Efetuar um Saque");
+                Console.WriteLine("(3) - Realizar um Depósito");
+                Console.WriteLine("(4) - Efetuar um Pagamento");
+                Console.WriteLine("(5) - Realizar uma Transferência");
+                Console.WriteLine("(6) - Encerrar");
                 Console.WriteLine("######################################");
+                Console.WriteLine(" ");
                 Console.Write("Escolha uma Opção: ");
                 opcaoServico = int.Parse(Console.ReadLine());
+                Console.WriteLine(" ");
+
 
                 if (opcaoServico == 1)
                 {
@@ -105,7 +108,7 @@ namespace caixaEletronico
                     Console.WriteLine("O Saldo Disponível Nesta Conta é de R$ {0}", contaSelecionada);
                     Console.WriteLine(" ");
                 }
-            }
+            }      
         }
     }
 }
