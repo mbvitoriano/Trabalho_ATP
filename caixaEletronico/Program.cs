@@ -701,815 +701,815 @@ namespace caixaEletronico
                 // Serviço de transferência do dinheiro.
 
                  else if (opcaoServico == 5){
-                    Console.Clear();
-                    Console.WriteLine("Com Qual Conta Você Deseja Realizar a transfêrencia?");
-                    Console.WriteLine("Contas cadastradas: ");
-
-                    Console.WriteLine("(1) - Conta Corrente um.");
-                    Console.WriteLine("(2) - Conta Corrente dois.");
-                    Console.WriteLine("(3) - Conta Corrente três.");
-
-                    Console.WriteLine("(4) - Conta Corrente Com Cheque Especial um");
-                    Console.WriteLine("(5) - Conta Corrente Com Cheque Especial dois.");
-                    Console.WriteLine("(6) - Conta Corrente Com Cheque Especial três.");
-                    
-                    Console.WriteLine("(7) - Conta Poupança um.");
-                    Console.WriteLine("(8) - Conta Poupança dois.");
-                    Console.WriteLine("(9) - Conta Poupança três.");
-
-                    Console.Write("Escolha a Conta a Ser Utilizada: ");
-                    opcaoPagamento = int.Parse(Console.ReadLine());
-
-
-                    Console.Clear();
-
-                    // Testes para escolher a conta que será transferido o dinheiro
-
-                    if (opcaoPagamento == 1){
-                    Console.Clear();
-                    System.Console.WriteLine("O dinheiro será descontado da conta corrente número um.");
-
-                    Console.WriteLine("Para qual conta irá o dinheiro ?");
-                    Console.WriteLine("Contas cadastradas: ");
-
-                    Console.WriteLine("(2) - Conta Corrente dois.");
-                    Console.WriteLine("(3) - Conta Corrente três.");
-
-                    Console.WriteLine("(4) - Conta Corrente Com Cheque Especial um");
-                    Console.WriteLine("(5) - Conta Corrente Com Cheque Especial dois.");
-                    Console.WriteLine("(6) - Conta Corrente Com Cheque Especial três.");
-                    
-                    Console.WriteLine("(7) - Conta Poupança um.");
-                    Console.WriteLine("(8) - Conta Poupança dois.");
-                    Console.WriteLine("(9) - Conta Poupança três.");
-
-                    Console.Write("Digite para qual conta será feito a transferência: ");
-                    opcaoTransferencia = int.Parse(Console.ReadLine());
-
-                    System.Console.WriteLine("Digite a quantia em reais para ser transferida: ");
-                    quantiaTransferencia = float.Parse(Console.ReadLine());
-
-                     // Testes para fazer a transferência e verificar se há saldo disponível para essa operação
-
-                    if(opcaoTransferencia == 2 && ccc1 >= quantiaTransferencia){
                         Console.Clear();
-                        ccc2 = ccc2 + quantiaTransferencia;
-                        ccc1 = ccc1 - quantiaTransferencia;
+                        Console.WriteLine("Com Qual Conta Você Deseja Realizar a transfêrencia?");
+                        Console.WriteLine("Contas cadastradas: ");
+
+                        Console.WriteLine("(1) - Conta Corrente um.");
+                        Console.WriteLine("(2) - Conta Corrente dois.");
+                        Console.WriteLine("(3) - Conta Corrente três.");
+
+                        Console.WriteLine("(4) - Conta Corrente Com Cheque Especial um");
+                        Console.WriteLine("(5) - Conta Corrente Com Cheque Especial dois.");
+                        Console.WriteLine("(6) - Conta Corrente Com Cheque Especial três.");
+                        
+                        Console.WriteLine("(7) - Conta Poupança um.");
+                        Console.WriteLine("(8) - Conta Poupança dois.");
+                        Console.WriteLine("(9) - Conta Poupança três.");
+
+                        Console.Write("Escolha a Conta a Ser Utilizada: ");
+                        opcaoPagamento = int.Parse(Console.ReadLine());
+
+
                         Console.Clear();
-                        System.Console.WriteLine("Tranferência realizada com sucesso.");
 
-                    }else if(opcaoTransferencia == 3 && ccc1 >= quantiaTransferencia){
+                        // Testes para escolher a conta que será transferido o dinheiro
 
-                        ccc3 = ccc3 + quantiaTransferencia;
-                        ccc1 = ccc1 - quantiaTransferencia;
-                         Console.Clear();
-                        System.Console.WriteLine("Tranferência realizada com sucesso.");
-
-                    }else if(opcaoTransferencia == 4 && ccc1 >= quantiaTransferencia){
-
-                        cce1 = cce1 + quantiaTransferencia;
-                        ccc1 = ccc1 - quantiaTransferencia;
+                        if (opcaoPagamento == 1){
                         Console.Clear();
-                        System.Console.WriteLine("Tranferência realizada com sucesso.");
+                        System.Console.WriteLine("O dinheiro será descontado da conta corrente número um.");
 
-                    }else if(opcaoTransferencia == 5 && ccc1 >= quantiaTransferencia){
+                        Console.WriteLine("Para qual conta irá o dinheiro ?");
+                        Console.WriteLine("Contas cadastradas: ");
 
-                        cce2 = cce2 + quantiaTransferencia;
-                        ccc1 = ccc1 - quantiaTransferencia;
+                        Console.WriteLine("(2) - Conta Corrente dois.");
+                        Console.WriteLine("(3) - Conta Corrente três.");
+
+                        Console.WriteLine("(4) - Conta Corrente Com Cheque Especial um");
+                        Console.WriteLine("(5) - Conta Corrente Com Cheque Especial dois.");
+                        Console.WriteLine("(6) - Conta Corrente Com Cheque Especial três.");
+                        
+                        Console.WriteLine("(7) - Conta Poupança um.");
+                        Console.WriteLine("(8) - Conta Poupança dois.");
+                        Console.WriteLine("(9) - Conta Poupança três.");
+
+                        Console.Write("Digite para qual conta será feito a transferência: ");
+                        opcaoTransferencia = int.Parse(Console.ReadLine());
+
+                        System.Console.WriteLine("Digite a quantia em reais para ser transferida: ");
+                        quantiaTransferencia = float.Parse(Console.ReadLine());
+
+                        // Testes para fazer a transferência e verificar se há saldo disponível para essa operação
+
+                        if(opcaoTransferencia == 2 && ccc1 >= quantiaTransferencia){
+                            Console.Clear();
+                            ccc2 = ccc2 + quantiaTransferencia;
+                            ccc1 = ccc1 - quantiaTransferencia;
+                            Console.Clear();
+                            System.Console.WriteLine("Tranferência realizada com sucesso.");
+
+                        }else if(opcaoTransferencia == 3 && ccc1 >= quantiaTransferencia){
+
+                            ccc3 = ccc3 + quantiaTransferencia;
+                            ccc1 = ccc1 - quantiaTransferencia;
+                            Console.Clear();
+                            System.Console.WriteLine("Tranferência realizada com sucesso.");
+
+                        }else if(opcaoTransferencia == 4 && ccc1 >= quantiaTransferencia){
+
+                            cce1 = cce1 + quantiaTransferencia;
+                            ccc1 = ccc1 - quantiaTransferencia;
+                            Console.Clear();
+                            System.Console.WriteLine("Tranferência realizada com sucesso.");
+
+                        }else if(opcaoTransferencia == 5 && ccc1 >= quantiaTransferencia){
+
+                            cce2 = cce2 + quantiaTransferencia;
+                            ccc1 = ccc1 - quantiaTransferencia;
+                            Console.Clear();
+                            System.Console.WriteLine("Tranferência realizada com sucesso.");
+
+                        }else if(opcaoTransferencia == 6 && ccc1 >= quantiaTransferencia){
+
+                            cce3 = cce3 + quantiaTransferencia;
+                            ccc1 = ccc1 - quantiaTransferencia;
+                            Console.Clear();
+                            System.Console.WriteLine("Tranferência realizada com sucesso.");
+
+                        }else if(opcaoTransferencia == 8 && ccc1 >= quantiaTransferencia){
+
+                            cp2 = cp2 + quantiaTransferencia;
+                            ccc1 = ccc1 - quantiaTransferencia;
+                            Console.Clear();
+                            System.Console.WriteLine("Tranferência realizada com sucesso.");
+
+                        }else if(opcaoTransferencia == 7 && ccc1 >= quantiaTransferencia){
+
+                            cp1 = cp1 + quantiaTransferencia;
+                            ccc1 = ccc1 - quantiaTransferencia;
+                            Console.Clear();
+                            System.Console.WriteLine("Tranferência realizada com sucesso.");
+
+                        }else if(opcaoTransferencia == 9 && ccc1 >= quantiaTransferencia){
+
+                            cp3 = cp3 + quantiaTransferencia;
+                            ccc1 = ccc1 - quantiaTransferencia;
+                            Console.Clear();
+                            System.Console.WriteLine("Tranferência realizada com sucesso.");
+
+                        }else{
+                            Console.Clear();
+                            System.Console.WriteLine("Você não possui essa quantia para transferir ou não pode transferir para essa conta.");
+                        }
+
+                        }else if(opcaoPagamento == 2){
                         Console.Clear();
-                        System.Console.WriteLine("Tranferência realizada com sucesso.");
+                        System.Console.WriteLine("O dinheiro será descontado da conta corrente número dois.");
 
-                    }else if(opcaoTransferencia == 6 && ccc1 >= quantiaTransferencia){
+                        Console.WriteLine("Para qual conta irá o dinheiro ?");
+                        Console.WriteLine("Contas cadastradas: ");
 
-                        cce3 = cce3 + quantiaTransferencia;
-                        ccc1 = ccc1 - quantiaTransferencia;
+                        Console.WriteLine("(1) - Conta Corrente um.");
+                        Console.WriteLine("(3) - Conta Corrente três.");
+
+                        Console.WriteLine("(4) - Conta Corrente Com Cheque Especial um");
+                        Console.WriteLine("(5) - Conta Corrente Com Cheque Especial dois.");
+                        Console.WriteLine("(6) - Conta Corrente Com Cheque Especial três.");
+                        
+                        Console.WriteLine("(7) - Conta Poupança um.");
+                        Console.WriteLine("(8) - Conta Poupança dois.");
+                        Console.WriteLine("(9) - Conta Poupança três.");
+
+                        Console.Write("Digite para qual conta será feito a transferência: ");
+                        opcaoTransferencia = int.Parse(Console.ReadLine());
+
+                        System.Console.WriteLine("Digite a quantia para ser transferida: ");
+                        quantiaTransferencia = float.Parse(Console.ReadLine());
+
+                        // Testes para fazer a transferência e verificar se há saldo disponível para essa operação
+
+                        if(opcaoTransferencia == 1 && ccc2 >= quantiaTransferencia){
+
+                            ccc1 = ccc1 + quantiaTransferencia;
+                            ccc2 = ccc2 - quantiaTransferencia;
+                            Console.Clear();
+                            System.Console.WriteLine("Tranferência realizada com sucesso.");
+
+                        }else if(opcaoTransferencia == 3 && ccc2 >= quantiaTransferencia){
+
+                            ccc3 = ccc3 + quantiaTransferencia;
+                            ccc2 = ccc2 - quantiaTransferencia;
+                            Console.Clear();
+                            System.Console.WriteLine("Tranferência realizada com sucesso.");
+
+                        }else if(opcaoTransferencia == 4 && ccc2 >= quantiaTransferencia){
+
+                            cce1 = cce1 + quantiaTransferencia;
+                            ccc2 = ccc2 - quantiaTransferencia;
+                            Console.Clear();
+                            System.Console.WriteLine("Tranferência realizada com sucesso.");
+
+                        }else if(opcaoTransferencia == 5 && ccc2 >= quantiaTransferencia){
+
+                            cce2 = cce2 + quantiaTransferencia;
+                            ccc2 = ccc2 - quantiaTransferencia;
+                            Console.Clear();
+                            System.Console.WriteLine("Tranferência realizada com sucesso.");
+
+                        }else if(opcaoTransferencia == 6 && ccc2 >= quantiaTransferencia){
+
+                            cce3 = cce3 + quantiaTransferencia;
+                            ccc2 = ccc2 - quantiaTransferencia;
+                            Console.Clear();
+                            System.Console.WriteLine("Tranferência realizada com sucesso.");
+
+                        }else if(opcaoTransferencia == 8 && ccc2 >= quantiaTransferencia){
+
+                            cp2 = cp2 + quantiaTransferencia;
+                            ccc2 = ccc2 - quantiaTransferencia;
+                            Console.Clear();
+                            System.Console.WriteLine("Tranferência realizada com sucesso.");
+
+                        }else if(opcaoTransferencia == 7 && ccc2 >= quantiaTransferencia){
+
+                            cp1 = cp1 + quantiaTransferencia;
+                            ccc2 = ccc2 - quantiaTransferencia;
+                            Console.Clear();
+                            System.Console.WriteLine("Tranferência realizada com sucesso.");
+
+                        }else if(opcaoTransferencia == 9 && ccc2 >= quantiaTransferencia){
+
+                            cp3 = cp3 + quantiaTransferencia;
+                            ccc2 = ccc2 - quantiaTransferencia;
+                            Console.Clear();
+                            System.Console.WriteLine("Tranferência realizada com sucesso.");
+
+                        }else{
+                            Console.Clear();
+                            System.Console.WriteLine("Você não possui essa quantia para transferir ou não pode transferir para essa conta.");
+                        }
+
+                        }else if(opcaoPagamento == 3){
                         Console.Clear();
-                        System.Console.WriteLine("Tranferência realizada com sucesso.");
+                        System.Console.WriteLine("O dinheiro será descontado da conta corrente número três.");
 
-                    }else if(opcaoTransferencia == 8 && ccc1 >= quantiaTransferencia){
+                        Console.WriteLine("Para qual conta irá o dinheiro ?");
+                        Console.WriteLine("Contas cadastradas: ");
 
-                        cp2 = cp2 + quantiaTransferencia;
-                        ccc1 = ccc1 - quantiaTransferencia;
-                        Console.Clear();
-                        System.Console.WriteLine("Tranferência realizada com sucesso.");
+                        Console.WriteLine("(1) - Conta Corrente um.");
+                        Console.WriteLine("(2) - Conta Corrente dois.");
 
-                    }else if(opcaoTransferencia == 7 && ccc1 >= quantiaTransferencia){
+                        Console.WriteLine("(4) - Conta Corrente Com Cheque Especial um");
+                        Console.WriteLine("(5) - Conta Corrente Com Cheque Especial dois.");
+                        Console.WriteLine("(6) - Conta Corrente Com Cheque Especial três.");
+                        
+                        Console.WriteLine("(7) - Conta Poupança um.");
+                        Console.WriteLine("(8) - Conta Poupança dois.");
+                        Console.WriteLine("(9) - Conta Poupança três.");
 
-                        cp1 = cp1 + quantiaTransferencia;
-                        ccc1 = ccc1 - quantiaTransferencia;
-                        Console.Clear();
-                        System.Console.WriteLine("Tranferência realizada com sucesso.");
+                        Console.Write("Digite para qual conta será feito a transferência: ");
+                        opcaoTransferencia = int.Parse(Console.ReadLine());
 
-                    }else if(opcaoTransferencia == 9 && ccc1 >= quantiaTransferencia){
+                        System.Console.WriteLine("Digite a quantia em reais para ser transferida: ");
+                        quantiaTransferencia = float.Parse(Console.ReadLine());
 
-                        cp3 = cp3 + quantiaTransferencia;
-                        ccc1 = ccc1 - quantiaTransferencia;
-                        Console.Clear();
-                        System.Console.WriteLine("Tranferência realizada com sucesso.");
+                        // Testes para fazer a transferência e verificar se há saldo disponível para essa operação
 
-                    }else{
-                        Console.Clear();
-                        System.Console.WriteLine("Você não possui essa quantia para transferir ou não pode transferir para essa conta.");
+                        if(opcaoTransferencia == 1 && ccc3 >= quantiaTransferencia){
+
+                            ccc1 = ccc1 + quantiaTransferencia;
+                            ccc3 = ccc3 - quantiaTransferencia;
+                            Console.Clear();
+                            System.Console.WriteLine("Tranferência realizada com sucesso.");
+
+                        }else if(opcaoTransferencia == 2 && ccc3 >= quantiaTransferencia){
+
+                            ccc2 = ccc2 + quantiaTransferencia;
+                            ccc3 = ccc3 - quantiaTransferencia;
+                            Console.Clear();
+                            System.Console.WriteLine("Tranferência realizada com sucesso.");
+
+                        }else if(opcaoTransferencia == 4 && ccc3 >= quantiaTransferencia){
+
+                            cce1 = cce1 + quantiaTransferencia;
+                            ccc3 = ccc3 - quantiaTransferencia;
+                            Console.Clear();
+                            System.Console.WriteLine("Tranferência realizada com sucesso.");
+
+                        }else if(opcaoTransferencia == 5 && ccc3 >= quantiaTransferencia){
+
+                            cce2 = cce2 + quantiaTransferencia;
+                            ccc3 = ccc3 - quantiaTransferencia;
+                            Console.Clear();
+                            System.Console.WriteLine("Tranferência realizada com sucesso.");
+
+                        }else if(opcaoTransferencia == 6 && ccc3 >= quantiaTransferencia){
+
+                            cce3 = cce3 + quantiaTransferencia;
+                            ccc3 = ccc3 - quantiaTransferencia;
+                            Console.Clear();
+                            System.Console.WriteLine("Tranferência realizada com sucesso.");
+
+                        }else if(opcaoTransferencia == 8 && ccc3 >= quantiaTransferencia){
+
+                            cp2 = cp2 + quantiaTransferencia;
+                            ccc3 = ccc3 - quantiaTransferencia;
+                            Console.Clear();
+                            System.Console.WriteLine("Tranferência realizada com sucesso.");
+
+                        }else if(opcaoTransferencia == 7 && ccc3 >= quantiaTransferencia){
+
+                            cp1 = cp1 + quantiaTransferencia;
+                            ccc3 = ccc3 - quantiaTransferencia;
+                            Console.Clear();
+                            System.Console.WriteLine("Tranferência realizada com sucesso.");
+
+                        }else if(opcaoTransferencia == 9 && ccc3 >= quantiaTransferencia){
+
+                            cp3 = cp3 + quantiaTransferencia;
+                            ccc3 = ccc3 - quantiaTransferencia;
+                            Console.Clear();
+                            System.Console.WriteLine("Tranferência realizada com sucesso.");
+
+                        }else{
+                            Console.Clear();
+                            System.Console.WriteLine("Você não possui essa quantia para transferir ou não pode transferir para essa conta.");
+                        }
+
+                        }else if(opcaoPagamento == 4 ){
+                            Console.Clear();
+                        Console.WriteLine("O dinheiro será descontado da conta corrente com cheque especial um");
+
+                        Console.WriteLine("Contas cadastradas: ");
+
+                        Console.WriteLine("(1) - Conta Corrente um.");
+                        Console.WriteLine("(2) - Conta Corrente dois.");
+                        Console.WriteLine("(3) - Conta Corrente três.");
+
+                        Console.WriteLine("(5) - Conta Corrente Com Cheque Especial dois.");
+                        Console.WriteLine("(6) - Conta Corrente Com Cheque Especial três.");
+                        
+                        Console.WriteLine("(7) - Conta Poupança um.");
+                        Console.WriteLine("(8) - Conta Poupança dois.");
+                        Console.WriteLine("(9) - Conta Poupança três.");
+
+                        Console.Write("Digite para qual conta será feito a transferência: ");
+                        opcaoTransferencia = int.Parse(Console.ReadLine());
+
+                        System.Console.WriteLine("Digite a quantia em reais para ser transferida: ");
+                        quantiaTransferencia = float.Parse(Console.ReadLine());
+
+                        // Testes para fazer a transferência e verificar se há saldo disponível para essa operação
+
+                        if(opcaoTransferencia == 1 && cce1 >= quantiaTransferencia){
+
+                            ccc1 = ccc1 + quantiaTransferencia;
+                            cce1 = cce1 - quantiaTransferencia;
+                            Console.Clear();
+                            System.Console.WriteLine("Tranferência realizada com sucesso.");
+
+                        }else if(opcaoTransferencia == 2 && cce1 >= quantiaTransferencia){
+
+                            ccc2 = ccc2 + quantiaTransferencia;
+                            cce1 = cce1 - quantiaTransferencia;
+                            Console.Clear();
+                            System.Console.WriteLine("Tranferência realizada com sucesso.");
+
+                        }else if(opcaoTransferencia == 3 && cce1 >= quantiaTransferencia){
+
+                            ccc3 = ccc3 + quantiaTransferencia;
+                            cce1 = cce1 - quantiaTransferencia;
+                            Console.Clear();
+                            System.Console.WriteLine("Tranferência realizada com sucesso.");
+
+                        }else if(opcaoTransferencia == 5 && cce1 >= quantiaTransferencia){
+
+                            cce2 = cce2 + quantiaTransferencia;
+                            cce1 = cce1 - quantiaTransferencia;
+                            Console.Clear();
+                            System.Console.WriteLine("Tranferência realizada com sucesso.");
+
+                        }else if(opcaoTransferencia == 6 && cce1 >= quantiaTransferencia){
+
+                            cce3 = cce3 + quantiaTransferencia;
+                            cce1 = cce1 - quantiaTransferencia;
+                            Console.Clear();
+                            System.Console.WriteLine("Tranferência realizada com sucesso.");
+
+                        }else if(opcaoTransferencia == 8 && cce1 >= quantiaTransferencia){
+
+                            cp2 = cp2 + quantiaTransferencia;
+                            cce1 = cce1 - quantiaTransferencia;
+                            Console.Clear();
+                            System.Console.WriteLine("Tranferência realizada com sucesso.");
+
+                        }else if(opcaoTransferencia == 7 && cce1 >= quantiaTransferencia){
+
+                            cp1 = cp1 + quantiaTransferencia;
+                            cce1 = cce1 - quantiaTransferencia;
+                            Console.Clear();
+                            System.Console.WriteLine("Tranferência realizada com sucesso.");
+
+                        }else if(opcaoTransferencia == 9 && cce1 >= quantiaTransferencia){
+
+                            cp3 = cp3 + quantiaTransferencia;
+                            cce1 = cce1 - quantiaTransferencia;
+                            Console.Clear();
+                            System.Console.WriteLine("Tranferência realizada com sucesso.");
+
+                        }else{
+                            Console.Clear();
+                            System.Console.WriteLine("Você não possui essa quantia para transferir ou não pode transferir para essa conta.");
+                        }
+
+                        }else if(opcaoPagamento == 5 ){
+                            Console.Clear();
+                        Console.WriteLine("O dinheiro será descontado da conta corrente com cheque especial dois");
+
+                        Console.WriteLine("Contas cadastradas: ");
+
+                        Console.WriteLine("(1) - Conta Corrente um.");
+                        Console.WriteLine("(2) - Conta Corrente dois.");
+                        Console.WriteLine("(3) - Conta Corrente três.");
+
+                        Console.WriteLine("(4) - Conta Corrente Com Cheque Especial um.");
+                        Console.WriteLine("(6) - Conta Corrente Com Cheque Especial três.");
+                        
+                        Console.WriteLine("(7) - Conta Poupança um.");
+                        Console.WriteLine("(8) - Conta Poupança dois.");
+                        Console.WriteLine("(9) - Conta Poupança três.");
+
+                        Console.Write("Digite para qual conta será feito a transferência: ");
+                        opcaoTransferencia = int.Parse(Console.ReadLine());
+
+                        System.Console.WriteLine("Digite a quantia em reais para ser transferida: ");
+                        quantiaTransferencia = float.Parse(Console.ReadLine());
+
+                        // Testes para fazer a transferência e verificar se há saldo disponível para essa operação
+
+                        if(opcaoTransferencia == 1 && cce2 >= quantiaTransferencia){
+
+                            ccc1 = ccc1 + quantiaTransferencia;
+                            cce2 = cce2 - quantiaTransferencia;
+                            Console.Clear();
+                            System.Console.WriteLine("Tranferência realizada com sucesso.");
+
+                        }else if(opcaoTransferencia == 2 && cce2 >= quantiaTransferencia){
+
+                            ccc2 = ccc2 + quantiaTransferencia;
+                            cce2 = cce2 - quantiaTransferencia;
+                            Console.Clear();
+                            System.Console.WriteLine("Tranferência realizada com sucesso.");
+
+                        }else if(opcaoTransferencia == 3 && cce2 >= quantiaTransferencia){
+
+                            ccc3 = ccc3 + quantiaTransferencia;
+                            cce2 = cce2 - quantiaTransferencia;
+                            Console.Clear();
+                            System.Console.WriteLine("Tranferência realizada com sucesso.");
+
+                        }else if(opcaoTransferencia == 4 && cce2 >= quantiaTransferencia){
+
+                            cce1 = cce1 + quantiaTransferencia;
+                            cce2 = cce2 - quantiaTransferencia;
+                            Console.Clear();
+                            System.Console.WriteLine("Tranferência realizada com sucesso.");
+
+                        }else if(opcaoTransferencia == 6 && cce2 >= quantiaTransferencia){
+
+                            cce3 = cce3 + quantiaTransferencia;
+                            cce2 = cce2 - quantiaTransferencia;
+                            Console.Clear();
+                            System.Console.WriteLine("Tranferência realizada com sucesso.");
+
+                        }else if(opcaoTransferencia == 8 && cce2 >= quantiaTransferencia){
+
+                            cp2 = cp2 + quantiaTransferencia;
+                            cce2 = cce2 - quantiaTransferencia;
+                            Console.Clear();
+                            System.Console.WriteLine("Tranferência realizada com sucesso.");
+
+                        }else if(opcaoTransferencia == 7 && cce2 >= quantiaTransferencia){
+
+                            cp1 = cp1 + quantiaTransferencia;
+                            cce2 = cce2 - quantiaTransferencia;
+                            Console.Clear();
+                            System.Console.WriteLine("Tranferência realizada com sucesso.");
+
+                        }else if(opcaoTransferencia == 9 && cce2 >= quantiaTransferencia){
+
+                            cp3 = cp3 + quantiaTransferencia;
+                            cce2 = cce2 - quantiaTransferencia;
+                            Console.Clear();
+                            System.Console.WriteLine("Tranferência realizada com sucesso.");
+
+                        }else{
+                            Console.Clear();
+                            System.Console.WriteLine("Você não possui essa quantia para transferir ou não pode transferir para essa conta.");
+                        }
+                        
+                        }else if(opcaoPagamento == 6 ){
+                            Console.Clear();
+                        Console.WriteLine("O dinheiro será descontado da conta corrente com cheque especial três");
+
+                        Console.WriteLine("Contas cadastradas: ");
+
+                        Console.WriteLine("(1) - Conta Corrente um.");
+                        Console.WriteLine("(2) - Conta Corrente dois.");
+                        Console.WriteLine("(3) - Conta Corrente três.");
+
+                        Console.WriteLine("(4) - Conta Corrente Com Cheque Especial um.");
+                        Console.WriteLine("(5) - Conta Corrente Com Cheque Especial dois.");
+                        
+                        Console.WriteLine("(7) - Conta Poupança um.");
+                        Console.WriteLine("(8) - Conta Poupança dois.");
+                        Console.WriteLine("(9) - Conta Poupança três.");
+
+                        Console.Write("Digite para qual conta será feito a transferência: ");
+                        opcaoTransferencia = int.Parse(Console.ReadLine());
+
+                        System.Console.WriteLine("Digite a quantia em reais para ser transferida: ");
+                        quantiaTransferencia = float.Parse(Console.ReadLine());
+
+                        // Testes para fazer a transferência e verificar se há saldo disponível para essa operação
+
+                        if(opcaoTransferencia == 1 && cce3 >= quantiaTransferencia){
+
+                            ccc1 = ccc1 + quantiaTransferencia;
+                            cce3 = cce3 - quantiaTransferencia;
+                            Console.Clear();
+                            System.Console.WriteLine("Tranferência realizada com sucesso.");
+
+                        }else if(opcaoTransferencia == 2 && cce3 >= quantiaTransferencia){
+
+                            ccc2 = ccc2 + quantiaTransferencia;
+                            cce3 = cce3 - quantiaTransferencia;
+                            Console.Clear();
+                            System.Console.WriteLine("Tranferência realizada com sucesso.");
+
+                        }else if(opcaoTransferencia == 3 && cce3 >= quantiaTransferencia){
+
+                            ccc3 = ccc3 + quantiaTransferencia;
+                            cce3 = cce3 - quantiaTransferencia;
+                            Console.Clear();
+                            System.Console.WriteLine("Tranferência realizada com sucesso.");
+
+                        }else if(opcaoTransferencia == 4 && cce3 >= quantiaTransferencia){
+
+                            cce1 = cce1 + quantiaTransferencia;
+                            cce3 = cce3 - quantiaTransferencia;
+                            Console.Clear();
+                            System.Console.WriteLine("Tranferência realizada com sucesso.");
+
+                        }else if(opcaoTransferencia == 5 && cce3 >= quantiaTransferencia){
+
+                            cce2 = cce2 + quantiaTransferencia;
+                            cce3 = cce3 - quantiaTransferencia;
+                            Console.Clear();
+                            System.Console.WriteLine("Tranferência realizada com sucesso.");
+
+                        }else if(opcaoTransferencia == 8 && cce3 >= quantiaTransferencia){
+
+                            cp2 = cp2 + quantiaTransferencia;
+                            cce3 = cce3 - quantiaTransferencia;
+                            Console.Clear();
+                            System.Console.WriteLine("Tranferência realizada com sucesso.");
+
+                        }else if(opcaoTransferencia == 7 && cce3 >= quantiaTransferencia){
+
+                            cp1 = cp1 + quantiaTransferencia;
+                            cce3 = cce3 - quantiaTransferencia;
+                            Console.Clear();
+                            System.Console.WriteLine("Tranferência realizada com sucesso.");
+
+                        }else if(opcaoTransferencia == 9 && cce3 >= quantiaTransferencia){
+
+                            cp3 = cp3 + quantiaTransferencia;
+                            cce3 = cce3 - quantiaTransferencia;
+                            Console.Clear();
+                            System.Console.WriteLine("Tranferência realizada com sucesso.");
+
+                        }else{
+                            Console.Clear();
+                            System.Console.WriteLine("Você não possui essa quantia para transferir ou não pode transferir para essa conta.");
+                        }
+                        
+
+                        }else if(opcaoPagamento == 7 ){
+                            Console.Clear();
+                        Console.WriteLine("O dinheiro será descontado da conta poupança um");
+
+                        Console.WriteLine("Contas cadastradas: ");
+
+                        Console.WriteLine("(1) - Conta Corrente um.");
+                        Console.WriteLine("(2) - Conta Corrente dois.");
+                        Console.WriteLine("(3) - Conta Corrente três.");
+
+                        Console.WriteLine("(4) - Conta Corrente Com Cheque Especial um");
+                        Console.WriteLine("(5) - Conta Corrente Com Cheque Especial dois.");
+                        Console.WriteLine("(6) - Conta Corrente Com Cheque Especial três.");
+                        
+                        Console.WriteLine("(8) - Conta Poupança dois.");
+                        Console.WriteLine("(9) - Conta Poupança três.");
+
+                        Console.Write("Digite para qual conta será feito a transferência: ");
+                        opcaoTransferencia = int.Parse(Console.ReadLine());
+
+                        System.Console.WriteLine("Digite a quantia para ser transferida: ");
+                        quantiaTransferencia = float.Parse(Console.ReadLine());
+
+                        // Testes para fazer a transferência e verificar se há saldo disponível para essa operação
+
+                        if(opcaoTransferencia == 1 && cp1 >= quantiaTransferencia){
+
+                            ccc1 = ccc1 + quantiaTransferencia;
+                            cp1 = cp1 - quantiaTransferencia;
+                            Console.Clear();
+                            System.Console.WriteLine("Tranferência realizada com sucesso.");
+
+                        }else if(opcaoTransferencia == 2 && cp1 >= quantiaTransferencia){
+
+                            ccc2 = ccc2 + quantiaTransferencia;
+                            cp1 = cp1 - quantiaTransferencia;
+                            Console.Clear();
+                            System.Console.WriteLine("Tranferência realizada com sucesso.");
+
+                        }else if(opcaoTransferencia == 3 && cp1 >= quantiaTransferencia){
+
+                            ccc3 = ccc3 + quantiaTransferencia;
+                            cp1 = cp1 - quantiaTransferencia;
+                            Console.Clear();
+                            System.Console.WriteLine("Tranferência realizada com sucesso.");
+
+                        }else if(opcaoTransferencia == 4 && cp1 >= quantiaTransferencia){
+
+                            cce1 = cce1 + quantiaTransferencia;
+                            cp1 = cp1 - quantiaTransferencia;
+                            Console.Clear();
+                            System.Console.WriteLine("Tranferência realizada com sucesso.");
+
+                        }else if(opcaoTransferencia == 5 && cp1 >= quantiaTransferencia){
+
+                            cce2 = cce2 + quantiaTransferencia;
+                            cp1 = cp1 - quantiaTransferencia;
+                            Console.Clear();
+                            System.Console.WriteLine("Tranferência realizada com sucesso.");
+
+                        }else if(opcaoTransferencia == 6 && cp1 >= quantiaTransferencia){
+
+                            cce3 = cce3 + quantiaTransferencia;
+                            cp1 = cp1 - quantiaTransferencia;
+                            Console.Clear();
+                            System.Console.WriteLine("Tranferência realizada com sucesso.");
+
+                        }else if(opcaoTransferencia == 8 && cp1 >= quantiaTransferencia){
+
+                            cp2 = cp2 + quantiaTransferencia;
+                            cp1 = cp1 - quantiaTransferencia;
+                            Console.Clear();
+                            System.Console.WriteLine("Tranferência realizada com sucesso.");
+
+                        }else if(opcaoTransferencia == 9 && cp1 >= quantiaTransferencia){
+
+                            cp3 = cp3 + quantiaTransferencia;
+                            cp1 = cp1 - quantiaTransferencia;
+                            Console.Clear();
+                            System.Console.WriteLine("Tranferência realizada com sucesso.");
+
+                        }else{
+                            Console.Clear();
+                            System.Console.WriteLine("Você não possui essa quantia para transferir ou não pode transferir para essa conta.");
+                        }
+                        
+
+                        }else if(opcaoPagamento == 8 ){
+                            Console.Clear();
+                        Console.WriteLine("O dinheiro será descontado da conta poupança dois");
+
+                        Console.WriteLine("Contas cadastradas: ");
+
+                        Console.WriteLine("(1) - Conta Corrente um.");
+                        Console.WriteLine("(2) - Conta Corrente dois.");
+                        Console.WriteLine("(3) - Conta Corrente três.");
+
+                        Console.WriteLine("(4) - Conta Corrente Com Cheque Especial um");
+                        Console.WriteLine("(5) - Conta Corrente Com Cheque Especial dois.");
+                        Console.WriteLine("(6) - Conta Corrente Com Cheque Especial três.");
+                        
+                        Console.WriteLine("(7) - Conta Poupança um.");
+                        Console.WriteLine("(9) - Conta Poupança três.");
+
+                        Console.Write("Digite para qual conta será feito a transferência:");
+                        opcaoTransferencia = int.Parse(Console.ReadLine());
+
+                        System.Console.WriteLine("Digite a quantia para ser transferida: ");
+                        quantiaTransferencia = float.Parse(Console.ReadLine());
+
+                        // Testes para fazer a transferência e verificar se há saldo disponível para essa operação
+
+                        if(opcaoTransferencia == 1 && cp2 >= quantiaTransferencia){
+
+                            ccc1 = ccc1 + quantiaTransferencia;
+                            cp2 = cp2 - quantiaTransferencia;
+                            Console.Clear();
+                            System.Console.WriteLine("Tranferência realizada com sucesso.");
+
+                        }else if(opcaoTransferencia == 2 && cp2 >= quantiaTransferencia){
+
+                            ccc2 = ccc2 + quantiaTransferencia;
+                            cp2 = cp2 - quantiaTransferencia;
+                            Console.Clear();
+                            System.Console.WriteLine("Tranferência realizada com sucesso.");
+
+                        }else if(opcaoTransferencia == 3 && cp2 >= quantiaTransferencia){
+
+                            ccc3 = ccc3 + quantiaTransferencia;
+                            cp2 = cp2 - quantiaTransferencia;
+                            Console.Clear();
+                            System.Console.WriteLine("Tranferência realizada com sucesso.");
+
+                        }else if(opcaoTransferencia == 4 && cp2 >= quantiaTransferencia){
+
+                            cce1 = cce1 + quantiaTransferencia;
+                            cp2 = cp2 - quantiaTransferencia;
+                            Console.Clear();
+                            System.Console.WriteLine("Tranferência realizada com sucesso.");
+
+                        }else if(opcaoTransferencia == 5 && cp2 >= quantiaTransferencia){
+
+                            cce2 = cce2 + quantiaTransferencia;
+                            cp2 = cp2 - quantiaTransferencia;
+                            Console.Clear();
+                            System.Console.WriteLine("Tranferência realizada com sucesso.");
+
+                        }else if(opcaoTransferencia == 6 && cp2 >= quantiaTransferencia){
+
+                            cce3 = cce3 + quantiaTransferencia;
+                            cp2 = cp2 - quantiaTransferencia;
+                            Console.Clear();
+                            System.Console.WriteLine("Tranferência realizada com sucesso.");
+
+                        }else if(opcaoTransferencia == 7 && cp2 >= quantiaTransferencia){
+
+                            cp1 = cp1 + quantiaTransferencia;
+                            cp2 = cp2 - quantiaTransferencia;
+                            Console.Clear();
+                            System.Console.WriteLine("Tranferência realizada com sucesso.");
+
+                        }else if(opcaoTransferencia == 9 && cp2 >= quantiaTransferencia){
+
+                            cp3 = cp3 + quantiaTransferencia;
+                            cp2 = cp2 - quantiaTransferencia;
+                            Console.Clear();
+                            System.Console.WriteLine("Tranferência realizada com sucesso.");
+
+                        }else{
+                            Console.Clear();
+                            System.Console.WriteLine("Você não possui essa quantia para transferir ou não pode transferir para essa conta.");
+                        }
+
+                        }else{
+
+                            Console.Clear();
+                        Console.WriteLine("O dinheiro será descontado da conta poupança três.");
+
+                        Console.WriteLine("Contas cadastradas: ");
+
+                        Console.WriteLine("(1) - Conta Corrente um.");
+                        Console.WriteLine("(2) - Conta Corrente dois.");
+                        Console.WriteLine("(3) - Conta Corrente três.");
+
+                        Console.WriteLine("(4) - Conta Corrente Com Cheque Especial um");
+                        Console.WriteLine("(5) - Conta Corrente Com Cheque Especial dois.");
+                        Console.WriteLine("(6) - Conta Corrente Com Cheque Especial três.");
+                        
+                        Console.WriteLine("(7) - Conta Poupança um.");
+                        Console.WriteLine("(8) - Conta Poupança dois.");
+
+                        Console.Write("Digite para qual conta será feito a transferência: ");
+                        opcaoTransferencia = int.Parse(Console.ReadLine());
+
+                        System.Console.WriteLine("Digite a quantia para ser transferida: ");
+                        quantiaTransferencia = float.Parse(Console.ReadLine());
+
+                        // Testes para fazer a transferência e verificar se há saldo disponível para essa operação
+
+                        if(opcaoTransferencia == 1 && cp3 >= quantiaTransferencia){
+
+                            ccc1 = ccc1 + quantiaTransferencia;
+                            cp3 = cp3 - quantiaTransferencia;
+                            Console.Clear();
+                            System.Console.WriteLine("Tranferência realizada com sucesso.");
+
+                        }else if(opcaoTransferencia == 2 && cp3 >= quantiaTransferencia){
+
+                            ccc2 = ccc2 + quantiaTransferencia;
+                            cp3 = cp3 - quantiaTransferencia;
+                            Console.Clear();
+                            System.Console.WriteLine("Tranferência realizada com sucesso.");
+
+                        }else if(opcaoTransferencia == 3 && cp3 >= quantiaTransferencia){
+
+                            ccc3 = ccc3 + quantiaTransferencia;
+                            cp3 = cp3 - quantiaTransferencia;
+                            Console.Clear();
+                            System.Console.WriteLine("Tranferência realizada com sucesso.");
+
+                        }else if(opcaoTransferencia == 4 && cp3 >= quantiaTransferencia){
+
+                            cce1 = cce1 + quantiaTransferencia;
+                            cp3 = cp3 - quantiaTransferencia;
+                            Console.Clear();
+                            System.Console.WriteLine("Tranferência realizada com sucesso.");
+
+                        }else if(opcaoTransferencia == 5 && cp3 >= quantiaTransferencia){
+
+                            cce2 = cce2 + quantiaTransferencia;
+                            cp3 = cp3 - quantiaTransferencia;
+                            Console.Clear();
+                            System.Console.WriteLine("Tranferência realizada com sucesso.");
+
+                        }else if(opcaoTransferencia == 6 && cp3 >= quantiaTransferencia){
+
+                            cce3 = cce3 + quantiaTransferencia;
+                            cp3 = cp3 - quantiaTransferencia;
+                            Console.Clear();
+                            System.Console.WriteLine("Tranferência realizada com sucesso.");
+
+                        }else if(opcaoTransferencia == 7 && cp3 >= quantiaTransferencia){
+
+                            cp1 = cp1 + quantiaTransferencia;
+                            cp3 = cp3 - quantiaTransferencia;
+                            Console.Clear();
+                            System.Console.WriteLine("Tranferência realizada com sucesso.");
+
+                        }else if(opcaoTransferencia == 8 && cp3 >= quantiaTransferencia){
+
+                            cp2 = cp2 + quantiaTransferencia;
+                            cp3 = cp3 - quantiaTransferencia;
+                            Console.Clear();
+                            System.Console.WriteLine("Tranferência realizada com sucesso.");
+
+                        }else{
+                            Console.Clear();
+                            System.Console.WriteLine("Você não possui essa quantia para transferir ou não pode trasnferir para essa conta.");
+                        }
+
+
                     }
-
-                    }else if(opcaoPagamento == 2){
-                    Console.Clear();
-                    System.Console.WriteLine("O dinheiro será descontado da conta corrente número dois.");
-
-                    Console.WriteLine("Para qual conta irá o dinheiro ?");
-                    Console.WriteLine("Contas cadastradas: ");
-
-                    Console.WriteLine("(1) - Conta Corrente um.");
-                    Console.WriteLine("(3) - Conta Corrente três.");
-
-                    Console.WriteLine("(4) - Conta Corrente Com Cheque Especial um");
-                    Console.WriteLine("(5) - Conta Corrente Com Cheque Especial dois.");
-                    Console.WriteLine("(6) - Conta Corrente Com Cheque Especial três.");
-                    
-                    Console.WriteLine("(7) - Conta Poupança um.");
-                    Console.WriteLine("(8) - Conta Poupança dois.");
-                    Console.WriteLine("(9) - Conta Poupança três.");
-
-                    Console.Write("Digite para qual conta será feito a transferência: ");
-                    opcaoTransferencia = int.Parse(Console.ReadLine());
-
-                    System.Console.WriteLine("Digite a quantia para ser transferida: ");
-                    quantiaTransferencia = float.Parse(Console.ReadLine());
-
-                     // Testes para fazer a transferência e verificar se há saldo disponível para essa operação
-
-                    if(opcaoTransferencia == 1 && ccc2 >= quantiaTransferencia){
-
-                        ccc1 = ccc1 + quantiaTransferencia;
-                        ccc2 = ccc2 - quantiaTransferencia;
-                        Console.Clear();
-                        System.Console.WriteLine("Tranferência realizada com sucesso.");
-
-                    }else if(opcaoTransferencia == 3 && ccc2 >= quantiaTransferencia){
-
-                        ccc3 = ccc3 + quantiaTransferencia;
-                        ccc2 = ccc2 - quantiaTransferencia;
-                        Console.Clear();
-                        System.Console.WriteLine("Tranferência realizada com sucesso.");
-
-                    }else if(opcaoTransferencia == 4 && ccc2 >= quantiaTransferencia){
-
-                        cce1 = cce1 + quantiaTransferencia;
-                        ccc2 = ccc2 - quantiaTransferencia;
-                        Console.Clear();
-                        System.Console.WriteLine("Tranferência realizada com sucesso.");
-
-                    }else if(opcaoTransferencia == 5 && ccc2 >= quantiaTransferencia){
-
-                        cce2 = cce2 + quantiaTransferencia;
-                        ccc2 = ccc2 - quantiaTransferencia;
-                        Console.Clear();
-                        System.Console.WriteLine("Tranferência realizada com sucesso.");
-
-                    }else if(opcaoTransferencia == 6 && ccc2 >= quantiaTransferencia){
-
-                        cce3 = cce3 + quantiaTransferencia;
-                        ccc2 = ccc2 - quantiaTransferencia;
-                        Console.Clear();
-                        System.Console.WriteLine("Tranferência realizada com sucesso.");
-
-                    }else if(opcaoTransferencia == 8 && ccc2 >= quantiaTransferencia){
-
-                        cp2 = cp2 + quantiaTransferencia;
-                        ccc2 = ccc2 - quantiaTransferencia;
-                        Console.Clear();
-                        System.Console.WriteLine("Tranferência realizada com sucesso.");
-
-                    }else if(opcaoTransferencia == 7 && ccc2 >= quantiaTransferencia){
-
-                        cp1 = cp1 + quantiaTransferencia;
-                        ccc2 = ccc2 - quantiaTransferencia;
-                        Console.Clear();
-                        System.Console.WriteLine("Tranferência realizada com sucesso.");
-
-                    }else if(opcaoTransferencia == 9 && ccc2 >= quantiaTransferencia){
-
-                        cp3 = cp3 + quantiaTransferencia;
-                        ccc2 = ccc2 - quantiaTransferencia;
-                        Console.Clear();
-                        System.Console.WriteLine("Tranferência realizada com sucesso.");
-
-                    }else{
-                        Console.Clear();
-                        System.Console.WriteLine("Você não possui essa quantia para transferir ou não pode transferir para essa conta.");
-                    }
-
-                    }else if(opcaoPagamento == 3){
-                    Console.Clear();
-                    System.Console.WriteLine("O dinheiro será descontado da conta corrente número três.");
-
-                    Console.WriteLine("Para qual conta irá o dinheiro ?");
-                    Console.WriteLine("Contas cadastradas: ");
-
-                    Console.WriteLine("(1) - Conta Corrente um.");
-                    Console.WriteLine("(2) - Conta Corrente dois.");
-
-                    Console.WriteLine("(4) - Conta Corrente Com Cheque Especial um");
-                    Console.WriteLine("(5) - Conta Corrente Com Cheque Especial dois.");
-                    Console.WriteLine("(6) - Conta Corrente Com Cheque Especial três.");
-                    
-                    Console.WriteLine("(7) - Conta Poupança um.");
-                    Console.WriteLine("(8) - Conta Poupança dois.");
-                    Console.WriteLine("(9) - Conta Poupança três.");
-
-                    Console.Write("Digite para qual conta será feito a transferência: ");
-                    opcaoTransferencia = int.Parse(Console.ReadLine());
-
-                    System.Console.WriteLine("Digite a quantia em reais para ser transferida: ");
-                    quantiaTransferencia = float.Parse(Console.ReadLine());
-
-                     // Testes para fazer a transferência e verificar se há saldo disponível para essa operação
-
-                    if(opcaoTransferencia == 1 && ccc3 >= quantiaTransferencia){
-
-                        ccc1 = ccc1 + quantiaTransferencia;
-                        ccc3 = ccc3 - quantiaTransferencia;
-                        Console.Clear();
-                        System.Console.WriteLine("Tranferência realizada com sucesso.");
-
-                    }else if(opcaoTransferencia == 2 && ccc3 >= quantiaTransferencia){
-
-                        ccc2 = ccc2 + quantiaTransferencia;
-                        ccc3 = ccc3 - quantiaTransferencia;
-                        Console.Clear();
-                        System.Console.WriteLine("Tranferência realizada com sucesso.");
-
-                    }else if(opcaoTransferencia == 4 && ccc3 >= quantiaTransferencia){
-
-                        cce1 = cce1 + quantiaTransferencia;
-                        ccc3 = ccc3 - quantiaTransferencia;
-                        Console.Clear();
-                        System.Console.WriteLine("Tranferência realizada com sucesso.");
-
-                    }else if(opcaoTransferencia == 5 && ccc3 >= quantiaTransferencia){
-
-                        cce2 = cce2 + quantiaTransferencia;
-                        ccc3 = ccc3 - quantiaTransferencia;
-                        Console.Clear();
-                        System.Console.WriteLine("Tranferência realizada com sucesso.");
-
-                    }else if(opcaoTransferencia == 6 && ccc3 >= quantiaTransferencia){
-
-                        cce3 = cce3 + quantiaTransferencia;
-                        ccc3 = ccc3 - quantiaTransferencia;
-                        Console.Clear();
-                        System.Console.WriteLine("Tranferência realizada com sucesso.");
-
-                    }else if(opcaoTransferencia == 8 && ccc3 >= quantiaTransferencia){
-
-                        cp2 = cp2 + quantiaTransferencia;
-                        ccc3 = ccc3 - quantiaTransferencia;
-                        Console.Clear();
-                        System.Console.WriteLine("Tranferência realizada com sucesso.");
-
-                    }else if(opcaoTransferencia == 7 && ccc3 >= quantiaTransferencia){
-
-                        cp1 = cp1 + quantiaTransferencia;
-                        ccc3 = ccc3 - quantiaTransferencia;
-                        Console.Clear();
-                        System.Console.WriteLine("Tranferência realizada com sucesso.");
-
-                    }else if(opcaoTransferencia == 9 && ccc3 >= quantiaTransferencia){
-
-                        cp3 = cp3 + quantiaTransferencia;
-                        ccc3 = ccc3 - quantiaTransferencia;
-                        Console.Clear();
-                        System.Console.WriteLine("Tranferência realizada com sucesso.");
-
-                    }else{
-                        Console.Clear();
-                        System.Console.WriteLine("Você não possui essa quantia para transferir ou não pode transferir para essa conta.");
-                    }
-
-                    }else if(opcaoPagamento == 4 ){
-                        Console.Clear();
-                    Console.WriteLine("O dinheiro será descontado da conta corrente com cheque especial um");
-
-                    Console.WriteLine("Contas cadastradas: ");
-
-                    Console.WriteLine("(1) - Conta Corrente um.");
-                    Console.WriteLine("(2) - Conta Corrente dois.");
-                    Console.WriteLine("(3) - Conta Corrente três.");
-
-                    Console.WriteLine("(5) - Conta Corrente Com Cheque Especial dois.");
-                    Console.WriteLine("(6) - Conta Corrente Com Cheque Especial três.");
-                    
-                    Console.WriteLine("(7) - Conta Poupança um.");
-                    Console.WriteLine("(8) - Conta Poupança dois.");
-                    Console.WriteLine("(9) - Conta Poupança três.");
-
-                    Console.Write("Digite para qual conta será feito a transferência: ");
-                    opcaoTransferencia = int.Parse(Console.ReadLine());
-
-                    System.Console.WriteLine("Digite a quantia em reais para ser transferida: ");
-                    quantiaTransferencia = float.Parse(Console.ReadLine());
-
-                     // Testes para fazer a transferência e verificar se há saldo disponível para essa operação
-
-                    if(opcaoTransferencia == 1 && cce1 >= quantiaTransferencia){
-
-                        ccc1 = ccc1 + quantiaTransferencia;
-                        cce1 = cce1 - quantiaTransferencia;
-                        Console.Clear();
-                        System.Console.WriteLine("Tranferência realizada com sucesso.");
-
-                    }else if(opcaoTransferencia == 2 && cce1 >= quantiaTransferencia){
-
-                        ccc2 = ccc2 + quantiaTransferencia;
-                        cce1 = cce1 - quantiaTransferencia;
-                        Console.Clear();
-                        System.Console.WriteLine("Tranferência realizada com sucesso.");
-
-                    }else if(opcaoTransferencia == 3 && cce1 >= quantiaTransferencia){
-
-                        ccc3 = ccc3 + quantiaTransferencia;
-                        cce1 = cce1 - quantiaTransferencia;
-                        Console.Clear();
-                        System.Console.WriteLine("Tranferência realizada com sucesso.");
-
-                    }else if(opcaoTransferencia == 5 && cce1 >= quantiaTransferencia){
-
-                        cce2 = cce2 + quantiaTransferencia;
-                        cce1 = cce1 - quantiaTransferencia;
-                        Console.Clear();
-                        System.Console.WriteLine("Tranferência realizada com sucesso.");
-
-                    }else if(opcaoTransferencia == 6 && cce1 >= quantiaTransferencia){
-
-                        cce3 = cce3 + quantiaTransferencia;
-                        cce1 = cce1 - quantiaTransferencia;
-                        Console.Clear();
-                        System.Console.WriteLine("Tranferência realizada com sucesso.");
-
-                    }else if(opcaoTransferencia == 8 && cce1 >= quantiaTransferencia){
-
-                        cp2 = cp2 + quantiaTransferencia;
-                        cce1 = cce1 - quantiaTransferencia;
-                        Console.Clear();
-                        System.Console.WriteLine("Tranferência realizada com sucesso.");
-
-                    }else if(opcaoTransferencia == 7 && cce1 >= quantiaTransferencia){
-
-                        cp1 = cp1 + quantiaTransferencia;
-                        cce1 = cce1 - quantiaTransferencia;
-                        Console.Clear();
-                        System.Console.WriteLine("Tranferência realizada com sucesso.");
-
-                    }else if(opcaoTransferencia == 9 && cce1 >= quantiaTransferencia){
-
-                        cp3 = cp3 + quantiaTransferencia;
-                        cce1 = cce1 - quantiaTransferencia;
-                        Console.Clear();
-                        System.Console.WriteLine("Tranferência realizada com sucesso.");
-
-                    }else{
-                        Console.Clear();
-                        System.Console.WriteLine("Você não possui essa quantia para transferir ou não pode transferir para essa conta.");
-                    }
-
-                    }else if(opcaoPagamento == 5 ){
-                        Console.Clear();
-                    Console.WriteLine("O dinheiro será descontado da conta corrente com cheque especial dois");
-
-                    Console.WriteLine("Contas cadastradas: ");
-
-                    Console.WriteLine("(1) - Conta Corrente um.");
-                    Console.WriteLine("(2) - Conta Corrente dois.");
-                    Console.WriteLine("(3) - Conta Corrente três.");
-
-                    Console.WriteLine("(4) - Conta Corrente Com Cheque Especial um.");
-                    Console.WriteLine("(6) - Conta Corrente Com Cheque Especial três.");
-                    
-                    Console.WriteLine("(7) - Conta Poupança um.");
-                    Console.WriteLine("(8) - Conta Poupança dois.");
-                    Console.WriteLine("(9) - Conta Poupança três.");
-
-                    Console.Write("Digite para qual conta será feito a transferência: ");
-                    opcaoTransferencia = int.Parse(Console.ReadLine());
-
-                    System.Console.WriteLine("Digite a quantia em reais para ser transferida: ");
-                    quantiaTransferencia = float.Parse(Console.ReadLine());
-
-                     // Testes para fazer a transferência e verificar se há saldo disponível para essa operação
-
-                    if(opcaoTransferencia == 1 && cce2 >= quantiaTransferencia){
-
-                        ccc1 = ccc1 + quantiaTransferencia;
-                        cce2 = cce2 - quantiaTransferencia;
-                        Console.Clear();
-                        System.Console.WriteLine("Tranferência realizada com sucesso.");
-
-                    }else if(opcaoTransferencia == 2 && cce2 >= quantiaTransferencia){
-
-                        ccc2 = ccc2 + quantiaTransferencia;
-                        cce2 = cce2 - quantiaTransferencia;
-                        Console.Clear();
-                        System.Console.WriteLine("Tranferência realizada com sucesso.");
-
-                    }else if(opcaoTransferencia == 3 && cce2 >= quantiaTransferencia){
-
-                        ccc3 = ccc3 + quantiaTransferencia;
-                        cce2 = cce2 - quantiaTransferencia;
-                        Console.Clear();
-                        System.Console.WriteLine("Tranferência realizada com sucesso.");
-
-                    }else if(opcaoTransferencia == 4 && cce2 >= quantiaTransferencia){
-
-                        cce1 = cce1 + quantiaTransferencia;
-                        cce2 = cce2 - quantiaTransferencia;
-                        Console.Clear();
-                        System.Console.WriteLine("Tranferência realizada com sucesso.");
-
-                    }else if(opcaoTransferencia == 6 && cce2 >= quantiaTransferencia){
-
-                        cce3 = cce3 + quantiaTransferencia;
-                        cce2 = cce2 - quantiaTransferencia;
-                        Console.Clear();
-                        System.Console.WriteLine("Tranferência realizada com sucesso.");
-
-                    }else if(opcaoTransferencia == 8 && cce2 >= quantiaTransferencia){
-
-                        cp2 = cp2 + quantiaTransferencia;
-                        cce2 = cce2 - quantiaTransferencia;
-                        Console.Clear();
-                        System.Console.WriteLine("Tranferência realizada com sucesso.");
-
-                    }else if(opcaoTransferencia == 7 && cce2 >= quantiaTransferencia){
-
-                        cp1 = cp1 + quantiaTransferencia;
-                        cce2 = cce2 - quantiaTransferencia;
-                        Console.Clear();
-                        System.Console.WriteLine("Tranferência realizada com sucesso.");
-
-                    }else if(opcaoTransferencia == 9 && cce2 >= quantiaTransferencia){
-
-                        cp3 = cp3 + quantiaTransferencia;
-                        cce2 = cce2 - quantiaTransferencia;
-                        Console.Clear();
-                        System.Console.WriteLine("Tranferência realizada com sucesso.");
-
-                    }else{
-                        Console.Clear();
-                        System.Console.WriteLine("Você não possui essa quantia para transferir ou não pode transferir para essa conta.");
-                    }
-                    
-                    }else if(opcaoPagamento == 6 ){
-                        Console.Clear();
-                    Console.WriteLine("O dinheiro será descontado da conta corrente com cheque especial três");
-
-                    Console.WriteLine("Contas cadastradas: ");
-
-                    Console.WriteLine("(1) - Conta Corrente um.");
-                    Console.WriteLine("(2) - Conta Corrente dois.");
-                    Console.WriteLine("(3) - Conta Corrente três.");
-
-                    Console.WriteLine("(4) - Conta Corrente Com Cheque Especial um.");
-                    Console.WriteLine("(5) - Conta Corrente Com Cheque Especial dois.");
-                    
-                    Console.WriteLine("(7) - Conta Poupança um.");
-                    Console.WriteLine("(8) - Conta Poupança dois.");
-                    Console.WriteLine("(9) - Conta Poupança três.");
-
-                    Console.Write("Digite para qual conta será feito a transferência: ");
-                    opcaoTransferencia = int.Parse(Console.ReadLine());
-
-                     System.Console.WriteLine("Digite a quantia em reais para ser transferida: ");
-                     quantiaTransferencia = float.Parse(Console.ReadLine());
-
-                    // Testes para fazer a transferência e verificar se há saldo disponível para essa operação
-
-                    if(opcaoTransferencia == 1 && cce3 >= quantiaTransferencia){
-
-                        ccc1 = ccc1 + quantiaTransferencia;
-                        cce3 = cce3 - quantiaTransferencia;
-                        Console.Clear();
-                        System.Console.WriteLine("Tranferência realizada com sucesso.");
-
-                    }else if(opcaoTransferencia == 2 && cce3 >= quantiaTransferencia){
-
-                        ccc2 = ccc2 + quantiaTransferencia;
-                        cce3 = cce3 - quantiaTransferencia;
-                        Console.Clear();
-                        System.Console.WriteLine("Tranferência realizada com sucesso.");
-
-                    }else if(opcaoTransferencia == 3 && cce3 >= quantiaTransferencia){
-
-                        ccc3 = ccc3 + quantiaTransferencia;
-                        cce3 = cce3 - quantiaTransferencia;
-                        Console.Clear();
-                        System.Console.WriteLine("Tranferência realizada com sucesso.");
-
-                    }else if(opcaoTransferencia == 4 && cce3 >= quantiaTransferencia){
-
-                        cce1 = cce1 + quantiaTransferencia;
-                        cce3 = cce3 - quantiaTransferencia;
-                        Console.Clear();
-                        System.Console.WriteLine("Tranferência realizada com sucesso.");
-
-                    }else if(opcaoTransferencia == 5 && cce3 >= quantiaTransferencia){
-
-                        cce2 = cce2 + quantiaTransferencia;
-                        cce3 = cce3 - quantiaTransferencia;
-                        Console.Clear();
-                        System.Console.WriteLine("Tranferência realizada com sucesso.");
-
-                    }else if(opcaoTransferencia == 8 && cce3 >= quantiaTransferencia){
-
-                        cp2 = cp2 + quantiaTransferencia;
-                        cce3 = cce3 - quantiaTransferencia;
-                        Console.Clear();
-                        System.Console.WriteLine("Tranferência realizada com sucesso.");
-
-                    }else if(opcaoTransferencia == 7 && cce3 >= quantiaTransferencia){
-
-                        cp1 = cp1 + quantiaTransferencia;
-                        cce3 = cce3 - quantiaTransferencia;
-                        Console.Clear();
-                        System.Console.WriteLine("Tranferência realizada com sucesso.");
-
-                    }else if(opcaoTransferencia == 9 && cce3 >= quantiaTransferencia){
-
-                        cp3 = cp3 + quantiaTransferencia;
-                        cce3 = cce3 - quantiaTransferencia;
-                        Console.Clear();
-                        System.Console.WriteLine("Tranferência realizada com sucesso.");
-
-                    }else{
-                        Console.Clear();
-                        System.Console.WriteLine("Você não possui essa quantia para transferir ou não pode transferir para essa conta.");
-                    }
-                    
-
-                    }else if(opcaoPagamento == 7 ){
-                        Console.Clear();
-                    Console.WriteLine("O dinheiro será descontado da conta poupança um");
-
-                    Console.WriteLine("Contas cadastradas: ");
-
-                    Console.WriteLine("(1) - Conta Corrente um.");
-                    Console.WriteLine("(2) - Conta Corrente dois.");
-                    Console.WriteLine("(3) - Conta Corrente três.");
-
-                    Console.WriteLine("(4) - Conta Corrente Com Cheque Especial um");
-                    Console.WriteLine("(5) - Conta Corrente Com Cheque Especial dois.");
-                    Console.WriteLine("(6) - Conta Corrente Com Cheque Especial três.");
-                    
-                    Console.WriteLine("(8) - Conta Poupança dois.");
-                    Console.WriteLine("(9) - Conta Poupança três.");
-
-                    Console.Write("Digite para qual conta será feito a transferência: ");
-                    opcaoTransferencia = int.Parse(Console.ReadLine());
-
-                    System.Console.WriteLine("Digite a quantia para ser transferida: ");
-                     quantiaTransferencia = float.Parse(Console.ReadLine());
-
-                    // Testes para fazer a transferência e verificar se há saldo disponível para essa operação
-
-                    if(opcaoTransferencia == 1 && cp1 >= quantiaTransferencia){
-
-                        ccc1 = ccc1 + quantiaTransferencia;
-                        cp1 = cp1 - quantiaTransferencia;
-                        Console.Clear();
-                        System.Console.WriteLine("Tranferência realizada com sucesso.");
-
-                    }else if(opcaoTransferencia == 2 && cp1 >= quantiaTransferencia){
-
-                        ccc2 = ccc2 + quantiaTransferencia;
-                        cp1 = cp1 - quantiaTransferencia;
-                        Console.Clear();
-                        System.Console.WriteLine("Tranferência realizada com sucesso.");
-
-                    }else if(opcaoTransferencia == 3 && cp1 >= quantiaTransferencia){
-
-                        ccc3 = ccc3 + quantiaTransferencia;
-                        cp1 = cp1 - quantiaTransferencia;
-                        Console.Clear();
-                        System.Console.WriteLine("Tranferência realizada com sucesso.");
-
-                    }else if(opcaoTransferencia == 4 && cp1 >= quantiaTransferencia){
-
-                        cce1 = cce1 + quantiaTransferencia;
-                        cp1 = cp1 - quantiaTransferencia;
-                        Console.Clear();
-                        System.Console.WriteLine("Tranferência realizada com sucesso.");
-
-                    }else if(opcaoTransferencia == 5 && cp1 >= quantiaTransferencia){
-
-                        cce2 = cce2 + quantiaTransferencia;
-                        cp1 = cp1 - quantiaTransferencia;
-                        Console.Clear();
-                        System.Console.WriteLine("Tranferência realizada com sucesso.");
-
-                    }else if(opcaoTransferencia == 6 && cp1 >= quantiaTransferencia){
-
-                        cce3 = cce3 + quantiaTransferencia;
-                        cp1 = cp1 - quantiaTransferencia;
-                        Console.Clear();
-                        System.Console.WriteLine("Tranferência realizada com sucesso.");
-
-                    }else if(opcaoTransferencia == 8 && cp1 >= quantiaTransferencia){
-
-                        cp2 = cp2 + quantiaTransferencia;
-                        cp1 = cp1 - quantiaTransferencia;
-                        Console.Clear();
-                        System.Console.WriteLine("Tranferência realizada com sucesso.");
-
-                    }else if(opcaoTransferencia == 9 && cp1 >= quantiaTransferencia){
-
-                        cp3 = cp3 + quantiaTransferencia;
-                        cp1 = cp1 - quantiaTransferencia;
-                        Console.Clear();
-                        System.Console.WriteLine("Tranferência realizada com sucesso.");
-
-                    }else{
-                        Console.Clear();
-                        System.Console.WriteLine("Você não possui essa quantia para transferir ou não pode transferir para essa conta.");
-                    }
-                    
-
-                    }else if(opcaoPagamento == 8 ){
-                        Console.Clear();
-                    Console.WriteLine("O dinheiro será descontado da conta poupança dois");
-
-                    Console.WriteLine("Contas cadastradas: ");
-
-                    Console.WriteLine("(1) - Conta Corrente um.");
-                    Console.WriteLine("(2) - Conta Corrente dois.");
-                    Console.WriteLine("(3) - Conta Corrente três.");
-
-                    Console.WriteLine("(4) - Conta Corrente Com Cheque Especial um");
-                    Console.WriteLine("(5) - Conta Corrente Com Cheque Especial dois.");
-                    Console.WriteLine("(6) - Conta Corrente Com Cheque Especial três.");
-                    
-                    Console.WriteLine("(7) - Conta Poupança um.");
-                    Console.WriteLine("(9) - Conta Poupança três.");
-
-                    Console.Write("Digite para qual conta será feito a transferência:");
-                    opcaoTransferencia = int.Parse(Console.ReadLine());
-
-                       System.Console.WriteLine("Digite a quantia para ser transferida: ");
-                     quantiaTransferencia = float.Parse(Console.ReadLine());
-
-                    // Testes para fazer a transferência e verificar se há saldo disponível para essa operação
-
-                    if(opcaoTransferencia == 1 && cp2 >= quantiaTransferencia){
-
-                        ccc1 = ccc1 + quantiaTransferencia;
-                        cp2 = cp2 - quantiaTransferencia;
-                        Console.Clear();
-                        System.Console.WriteLine("Tranferência realizada com sucesso.");
-
-                    }else if(opcaoTransferencia == 2 && cp2 >= quantiaTransferencia){
-
-                        ccc2 = ccc2 + quantiaTransferencia;
-                        cp2 = cp2 - quantiaTransferencia;
-                        Console.Clear();
-                        System.Console.WriteLine("Tranferência realizada com sucesso.");
-
-                    }else if(opcaoTransferencia == 3 && cp2 >= quantiaTransferencia){
-
-                        ccc3 = ccc3 + quantiaTransferencia;
-                        cp2 = cp2 - quantiaTransferencia;
-                        Console.Clear();
-                        System.Console.WriteLine("Tranferência realizada com sucesso.");
-
-                    }else if(opcaoTransferencia == 4 && cp2 >= quantiaTransferencia){
-
-                        cce1 = cce1 + quantiaTransferencia;
-                        cp2 = cp2 - quantiaTransferencia;
-                        Console.Clear();
-                        System.Console.WriteLine("Tranferência realizada com sucesso.");
-
-                    }else if(opcaoTransferencia == 5 && cp2 >= quantiaTransferencia){
-
-                        cce2 = cce2 + quantiaTransferencia;
-                        cp2 = cp2 - quantiaTransferencia;
-                        Console.Clear();
-                        System.Console.WriteLine("Tranferência realizada com sucesso.");
-
-                    }else if(opcaoTransferencia == 6 && cp2 >= quantiaTransferencia){
-
-                        cce3 = cce3 + quantiaTransferencia;
-                        cp2 = cp2 - quantiaTransferencia;
-                        Console.Clear();
-                        System.Console.WriteLine("Tranferência realizada com sucesso.");
-
-                    }else if(opcaoTransferencia == 7 && cp2 >= quantiaTransferencia){
-
-                        cp1 = cp1 + quantiaTransferencia;
-                        cp2 = cp2 - quantiaTransferencia;
-                        Console.Clear();
-                        System.Console.WriteLine("Tranferência realizada com sucesso.");
-
-                    }else if(opcaoTransferencia == 9 && cp2 >= quantiaTransferencia){
-
-                        cp3 = cp3 + quantiaTransferencia;
-                        cp2 = cp2 - quantiaTransferencia;
-                        Console.Clear();
-                        System.Console.WriteLine("Tranferência realizada com sucesso.");
-
-                    }else{
-                        Console.Clear();
-                        System.Console.WriteLine("Você não possui essa quantia para transferir ou não pode transferir para essa conta.");
-                    }
-
-                    }else{
-
-                        Console.Clear();
-                    Console.WriteLine("O dinheiro será descontado da conta poupança três.");
-
-                    Console.WriteLine("Contas cadastradas: ");
-
-                    Console.WriteLine("(1) - Conta Corrente um.");
-                    Console.WriteLine("(2) - Conta Corrente dois.");
-                    Console.WriteLine("(3) - Conta Corrente três.");
-
-                    Console.WriteLine("(4) - Conta Corrente Com Cheque Especial um");
-                    Console.WriteLine("(5) - Conta Corrente Com Cheque Especial dois.");
-                    Console.WriteLine("(6) - Conta Corrente Com Cheque Especial três.");
-                    
-                    Console.WriteLine("(7) - Conta Poupança um.");
-                    Console.WriteLine("(8) - Conta Poupança dois.");
-
-                    Console.Write("Digite para qual conta será feito a transferência: ");
-                    opcaoTransferencia = int.Parse(Console.ReadLine());
-
-                    System.Console.WriteLine("Digite a quantia para ser transferida: ");
-                     quantiaTransferencia = float.Parse(Console.ReadLine());
-
-                    // Testes para fazer a transferência e verificar se há saldo disponível para essa operação
-
-                    if(opcaoTransferencia == 1 && cp3 >= quantiaTransferencia){
-
-                        ccc1 = ccc1 + quantiaTransferencia;
-                        cp3 = cp3 - quantiaTransferencia;
-                        Console.Clear();
-                        System.Console.WriteLine("Tranferência realizada com sucesso.");
-
-                    }else if(opcaoTransferencia == 2 && cp3 >= quantiaTransferencia){
-
-                        ccc2 = ccc2 + quantiaTransferencia;
-                        cp3 = cp3 - quantiaTransferencia;
-                        Console.Clear();
-                        System.Console.WriteLine("Tranferência realizada com sucesso.");
-
-                    }else if(opcaoTransferencia == 3 && cp3 >= quantiaTransferencia){
-
-                        ccc3 = ccc3 + quantiaTransferencia;
-                        cp3 = cp3 - quantiaTransferencia;
-                        Console.Clear();
-                        System.Console.WriteLine("Tranferência realizada com sucesso.");
-
-                    }else if(opcaoTransferencia == 4 && cp3 >= quantiaTransferencia){
-
-                        cce1 = cce1 + quantiaTransferencia;
-                        cp3 = cp3 - quantiaTransferencia;
-                        Console.Clear();
-                        System.Console.WriteLine("Tranferência realizada com sucesso.");
-
-                    }else if(opcaoTransferencia == 5 && cp3 >= quantiaTransferencia){
-
-                        cce2 = cce2 + quantiaTransferencia;
-                        cp3 = cp3 - quantiaTransferencia;
-                        Console.Clear();
-                        System.Console.WriteLine("Tranferência realizada com sucesso.");
-
-                    }else if(opcaoTransferencia == 6 && cp3 >= quantiaTransferencia){
-
-                        cce3 = cce3 + quantiaTransferencia;
-                        cp3 = cp3 - quantiaTransferencia;
-                        Console.Clear();
-                        System.Console.WriteLine("Tranferência realizada com sucesso.");
-
-                    }else if(opcaoTransferencia == 7 && cp3 >= quantiaTransferencia){
-
-                        cp1 = cp1 + quantiaTransferencia;
-                        cp3 = cp3 - quantiaTransferencia;
-                        Console.Clear();
-                        System.Console.WriteLine("Tranferência realizada com sucesso.");
-
-                    }else if(opcaoTransferencia == 8 && cp3 >= quantiaTransferencia){
-
-                        cp2 = cp2 + quantiaTransferencia;
-                        cp3 = cp3 - quantiaTransferencia;
-                        Console.Clear();
-                        System.Console.WriteLine("Tranferência realizada com sucesso.");
-
-                    }else{
-                        Console.Clear();
-                        System.Console.WriteLine("Você não possui essa quantia para transferir ou não pode trasnferir para essa conta.");
-                    }
-
-
-                 }
+                }
             }
         }
     }
-  }
 }
 
