@@ -22,13 +22,13 @@ namespace caixaEletronico
 
             // Saldo conta corrente
 
-            Console.Write("Saldo na Conta Corrente 1: ");
+            Console.Write("Saldo na Conta Corrente um: ");
             ccc1 = float.Parse(Console.ReadLine());
 
-            Console.Write("Saldo na Conta Corrente 2: ");
+            Console.Write("Saldo na Conta Corrente dois: ");
             ccc2 = float.Parse(Console.ReadLine());
 
-            Console.Write("Saldo na Conta Corrente 3: ");
+            Console.Write("Saldo na Conta Corrente três: ");
             ccc3 = float.Parse(Console.ReadLine());
 
             Console.Clear();
@@ -37,19 +37,19 @@ namespace caixaEletronico
 
             Console.WriteLine("Informe o Saldo Disponível e o Limite nas Contas Correntes Com Cheque Especial: ");
 
-            Console.Write("Saldo na Conta Corrente Com Cheque Especial 1: ");
+            Console.Write("Saldo na Conta Corrente Com Cheque Especial um: ");
             cce1 = float.Parse(Console.ReadLine());
 
             Console.Write("Informe o Limite disponível na conta: ");
             l1 = float.Parse(Console.ReadLine());
 
-            Console.Write("Saldo na Conta Corrente Com Cheque Especial 2: ");
+            Console.Write("Saldo na Conta Corrente Com Cheque Especial dois: ");
             cce2 = float.Parse(Console.ReadLine());
 
             Console.Write("Informe o Limite disponível na conta: ");
             l2 = float.Parse(Console.ReadLine());
 
-            Console.Write("Saldo na Conta Corrente Com Cheque Especial 3: ");
+            Console.Write("Saldo na Conta Corrente Com Cheque Especial três: ");
             cce3 = float.Parse(Console.ReadLine());
 
             Console.Write("Informe o Limite disponível na conta: ");
@@ -62,13 +62,13 @@ namespace caixaEletronico
 
             Console.WriteLine("Informe o Saldo Disponível nas Contas Poupança: ");
 
-            Console.Write("Saldo na Conta Poupança 1: ");
+            Console.Write("Saldo na Conta Poupança um: ");
             cp1 = float.Parse(Console.ReadLine());
 
-            Console.Write("Saldo na Conta Poupança 2: ");
+            Console.Write("Saldo na Conta Poupança dois: ");
             cp2 = float.Parse(Console.ReadLine());
 
-            Console.Write("Saldo na Conta Poupança 3: ");
+            Console.Write("Saldo na Conta Poupança três: ");
             cp3 = float.Parse(Console.ReadLine());
 
             Console.Clear();
@@ -98,17 +98,17 @@ namespace caixaEletronico
                     Console.WriteLine("Qual conta você deseja consultar? ");
                     Console.WriteLine("Contas cadastradas: ");
 
-                    Console.WriteLine("(1) - Conta Corrente 1");
-                    Console.WriteLine("(2) - Conta Corrente 2");
-                    Console.WriteLine("(3) - Conta Corrente 3");
-                    
-                    Console.WriteLine("(4) - Conta Corrente Com Cheque Especial 1");
-                    Console.WriteLine("(5) - Conta Corrente Com Cheque Especial 2");
-                    Console.WriteLine("(6) - Conta Corrente Com Cheque Especial 3");
+                    Console.WriteLine("(1) - Conta Corrente um.");
+                    Console.WriteLine("(2) - Conta Corrente dois.");
+                    Console.WriteLine("(3) - Conta Corrente três.");
 
-                    Console.WriteLine("(7) - Conta Poupança 1");
-                    Console.WriteLine("(8) - Conta Poupança 2");
-                    Console.WriteLine("(9) - Conta Poupança 3");
+                    Console.WriteLine("(4) - Conta Corrente Com Cheque Especial um");
+                    Console.WriteLine("(5) - Conta Corrente Com Cheque Especial dois.");
+                    Console.WriteLine("(6) - Conta Corrente Com Cheque Especial três.");
+                    
+                    Console.WriteLine("(7) - Conta Poupança um.");
+                    Console.WriteLine("(8) - Conta Poupança dois.");
+                    Console.WriteLine("(9) - Conta Poupança três.");
 
                     Console.Write("Escolha a Conta a Ser Consultada: ");
                     opcaoSaldo = int.Parse(Console.ReadLine());
@@ -156,17 +156,17 @@ namespace caixaEletronico
                     Console.WriteLine("De qual Conta Você Deseja Realiza o Saque?");
                     Console.WriteLine("Contas cadastradas: ");
 
-                    Console.WriteLine("(1) - Conta Corrente 1");
-                    Console.WriteLine("(2) - Conta Corrente 2");
-                    Console.WriteLine("(3) - Conta Corrente 3");
+                    Console.WriteLine("(1) - Conta Corrente um.");
+                    Console.WriteLine("(2) - Conta Corrente dois.");
+                    Console.WriteLine("(3) - Conta Corrente três.");
 
-                    Console.WriteLine("(4) - Conta Corrente Com Cheque Especial 1");
-                    Console.WriteLine("(5) - Conta Corrente Com Cheque Especial 2");
-                    Console.WriteLine("(6) - Conta Corrente Com Cheque Especial 3");
+                    Console.WriteLine("(4) - Conta Corrente Com Cheque Especial um");
+                    Console.WriteLine("(5) - Conta Corrente Com Cheque Especial dois.");
+                    Console.WriteLine("(6) - Conta Corrente Com Cheque Especial três.");
                     
-                    Console.WriteLine("(7) - Conta Poupança 1");
-                    Console.WriteLine("(8) - Conta Poupança 2");
-                    Console.WriteLine("(9) - Conta Poupança 3");
+                    Console.WriteLine("(7) - Conta Poupança um.");
+                    Console.WriteLine("(8) - Conta Poupança dois.");
+                    Console.WriteLine("(9) - Conta Poupança três.");
 
                     Console.Write("Escolha a Conta a Ser Consultada: ");
                     opcaoSaque = int.Parse(Console.ReadLine());
@@ -375,17 +375,17 @@ namespace caixaEletronico
                     Console.WriteLine("De qual Conta Você Deseja Realiza o Depósito?");
                     Console.WriteLine("Contas cadastradas: ");
 
-                    Console.WriteLine("(1) - Conta Corrente 1");
-                    Console.WriteLine("(2) - Conta Corrente 2");
-                    Console.WriteLine("(3) - Conta Corrente 3");
+                    Console.WriteLine("(1) - Conta Corrente um.");
+                    Console.WriteLine("(2) - Conta Corrente dois.");
+                    Console.WriteLine("(3) - Conta Corrente três.");
 
-                    Console.WriteLine("(4) - Conta Corrente Com Cheque Especial 1");
-                    Console.WriteLine("(5) - Conta Corrente Com Cheque Especial 2");
-                    Console.WriteLine("(6) - Conta Corrente Com Cheque Especial 3");
-
-                    Console.WriteLine("(7) - Conta Poupança 1");
-                    Console.WriteLine("(8) - Conta Poupança 2");
-                    Console.WriteLine("(9) - Conta Poupança 3");
+                    Console.WriteLine("(4) - Conta Corrente Com Cheque Especial um");
+                    Console.WriteLine("(5) - Conta Corrente Com Cheque Especial dois.");
+                    Console.WriteLine("(6) - Conta Corrente Com Cheque Especial três.");
+                    
+                    Console.WriteLine("(7) - Conta Poupança um.");
+                    Console.WriteLine("(8) - Conta Poupança dois.");
+                    Console.WriteLine("(9) - Conta Poupança três.");
 
                     Console.Write("Escolha a Conta a Ser Consultada: ");
                     opcaoDeposito = int.Parse(Console.ReadLine());
@@ -490,17 +490,17 @@ namespace caixaEletronico
                     Console.WriteLine("Com Qual Conta Você Deseja Realizar o Pagamento?");
                     Console.WriteLine("Contas cadastradas: ");
 
-                    Console.WriteLine("(1) - Conta Corrente 1");
-                    Console.WriteLine("(2) - Conta Corrente 2");
-                    Console.WriteLine("(3) - Conta Corrente 3");
+                    Console.WriteLine("(1) - Conta Corrente um.");
+                    Console.WriteLine("(2) - Conta Corrente dois.");
+                    Console.WriteLine("(3) - Conta Corrente três.");
 
-                    Console.WriteLine("(4) - Conta Corrente Com Cheque Especial 1");
-                    Console.WriteLine("(5) - Conta Corrente Com Cheque Especial 2");
-                    Console.WriteLine("(6) - Conta Corrente Com Cheque Especial 3");
-
-                    Console.WriteLine("(7) - Conta Poupança 1");
-                    Console.WriteLine("(8) - Conta Poupança 2");
-                    Console.WriteLine("(9) - Conta Poupança 3");
+                    Console.WriteLine("(4) - Conta Corrente Com Cheque Especial um");
+                    Console.WriteLine("(5) - Conta Corrente Com Cheque Especial dois.");
+                    Console.WriteLine("(6) - Conta Corrente Com Cheque Especial três.");
+                    
+                    Console.WriteLine("(7) - Conta Poupança um.");
+                    Console.WriteLine("(8) - Conta Poupança dois.");
+                    Console.WriteLine("(9) - Conta Poupança três.");
 
                     Console.Write("Escolha a Conta a Ser Utilizada: ");
                     opcaoPagamento = int.Parse(Console.ReadLine());
@@ -571,7 +571,7 @@ namespace caixaEletronico
                         }
                     }
 
-                    // Conta Corrente Com Cheque Especial
+                    // Opção de pagamento com  Conta Corrente Com Cheque Especial
 
                     else if (opcaoPagamento == 4)
                     {
@@ -634,8 +634,8 @@ namespace caixaEletronico
                         }
                     }
 
-                    // Conta Poupança
-                    
+                    // Opção de pagamento com Conta Poupança
+
                     else if (opcaoPagamento == 7)
                     {
                         Console.WriteLine("O Saldo Disponínel na Conta Selecionada é R$ {0}", cp1);
@@ -697,6 +697,11 @@ namespace caixaEletronico
                         }
                     }
                 }
+                 else if (opcaoServico == 5){
+
+                     
+
+                 }
             }
         }
     }
