@@ -11,8 +11,8 @@ namespace caixaEletronico
             *Conta Poupança (CP) | Limites Conta Cheque especial (L1,L2,L3) */
 
             float ccc1, ccc2, ccc3, cce1, cce2, cce3, l1, l2, l3, cp1, cp2, cp3, contaSelecionada = 0;
-            float valSaque, valDeposito, testeSaque;
-            int opcaoServico = 0, opcaoSaldo, opcaoSaque, opcaoDeposito;
+            float valSaque, valDeposito, valPagamento, testePagamento, testeSaque;
+            int opcaoServico = 0, opcaoSaldo, opcaoSaque, opcaoDeposito, opcaoPagamento;
 
             /* Início das Operações */
 
@@ -423,6 +423,208 @@ namespace caixaEletronico
                         Console.Clear();
                         Console.WriteLine("Depósito Efetuado com Sucesso! O novo Saldo é de R$ {0}", cp3);
                         Console.WriteLine(" ");
+                    }
+                }
+                // Função de Pagamentos (Apenas repliquei a parte de saque pois a lógica é a mesma
+                else if (opcaoServico == 4)
+                {
+                    Console.WriteLine("Com Qual Conta Você Deseja Realizar o Pagamento?");
+                    Console.WriteLine("Contas cadastradas: ");
+                    Console.WriteLine("(1) - Conta Corrente 1");
+                    Console.WriteLine("(2) - Conta Corrente 2");
+                    Console.WriteLine("(3) - Conta Corrente 3");
+                    Console.WriteLine("(4) - Conta Corrente Com Cheque Especial 1");
+                    Console.WriteLine("(5) - Conta Corrente Com Cheque Especial 2");
+                    Console.WriteLine("(6) - Conta Corrente Com Cheque Especial 3");
+                    Console.WriteLine("(7) - Conta Poupança 1");
+                    Console.WriteLine("(8) - Conta Poupança 2");
+                    Console.WriteLine("(9) - Conta Poupança 3");
+                    Console.Write("Escolha a Conta a Ser Utilizada: ");
+                    opcaoPagamento = int.Parse(Console.ReadLine());
+                    Console.WriteLine(" ");
+                    Console.Clear();
+                    
+                    if (opcaoPagamento == 1)
+                    {
+                        Console.WriteLine("O Saldo Disponínel na Conta Selecionada é R$ {0}", ccc1);
+                        Console.Write("Informe o Valor da Conta a ser Paga: R$ ");
+                        valPagamento = float.Parse(Console.ReadLine());
+                        testePagamento = ccc1 - valPagamento;
+                        if (testePagamento < 0.0)
+                        {
+                            Console.Clear();
+                            Console.WriteLine("Operação Não Permitida, Saldo Insuficiente");
+                            Console.WriteLine(" ");
+                        }
+                        else
+                        {
+                            ccc1 = (ccc1 - valPagamento);
+                            Console.Clear();
+                            Console.WriteLine("Pagamento Efetuado com Sucesso! O novo Saldo é de R$ {0}", ccc1);
+                            Console.WriteLine(" ");
+                        }
+                    }
+                    else if (opcaoPagamento == 2)
+                    {
+                        Console.WriteLine("O Saldo Disponínel na Conta Selecionada é R$ {0}", ccc2);
+                        Console.Write("Informe o Valor da Conta a ser Paga: R$ ");
+                        valPagamento = float.Parse(Console.ReadLine());
+                        testePagamento = ccc2 - valPagamento;
+                        if (testePagamento < 0.0)
+                        {
+                            Console.Clear();
+                            Console.WriteLine("Operação Não Permitida, Saldo Insuficiente");
+                            Console.WriteLine(" ");
+                        }
+                        else
+                        {
+                            ccc2 = (ccc2 - valPagamento);
+                            Console.Clear();
+                            Console.WriteLine("Pagamento Efetuado com Sucesso! O novo Saldo é de R$ {0}", ccc2);
+                            Console.WriteLine(" ");
+                        }
+                    }
+                    else if (opcaoPagamento == 3)
+                    {
+                        Console.WriteLine("O Saldo Disponínel na Conta Selecionada é R$ {0}", ccc3);
+                        Console.Write("Informe o Valor da Conta a ser Paga: R$ ");
+                        valPagamento = float.Parse(Console.ReadLine());
+                        testePagamento = ccc3 - valPagamento;
+                        if (testePagamento < 0.0)
+                        {
+                            Console.Clear();
+                            Console.WriteLine("Operação Não Permitida, Saldo Insuficiente");
+                            Console.WriteLine(" ");
+                        }
+                        else
+                        {
+                            ccc3 = (ccc3 - valPagamento);
+                            Console.Clear();
+                            Console.WriteLine("Pagamento Efetuado com Sucesso! O novo Saldo é de R$ {0}", ccc3);
+                            Console.WriteLine(" ");
+                        }
+                    }
+                    // Conta Corrente Com Cheque Especial
+                    else if (opcaoPagamento == 4)
+                    {
+                        Console.WriteLine("O Saldo Disponínel na Conta Selecionada é R$ {0}", cce1);
+                        Console.Write("Informe o Valor da Conta a ser Paga: R$ ");
+                        valPagamento = float.Parse(Console.ReadLine());
+                        testePagamento = cce1 - valPagamento;
+                        if (testePagamento < 0.0)
+                        {
+                            Console.Clear();
+                            Console.WriteLine("Operação Não Permitida, Saldo Insuficiente");
+                            Console.WriteLine(" ");
+                        }
+                        else
+                        {
+                            cce1 = (cce1 - valPagamento);
+                            Console.Clear();
+                            Console.WriteLine("Pagamento Efetuado com Sucesso! O novo Saldo é de R$ {0}", cce1);
+                            Console.WriteLine(" ");
+                        }
+                    }
+                    else if (opcaoPagamento == 5)
+                    {
+                        Console.WriteLine("O Saldo Disponínel na Conta Selecionada é R$ {0}", cce2);
+                        Console.Write("Informe o Valor da Conta a ser Paga: R$ ");
+                        valPagamento = float.Parse(Console.ReadLine());
+                        testePagamento = cce2 - valPagamento;
+                        if (testePagamento < 0.0)
+                        {
+                            Console.Clear();
+                            Console.WriteLine("Operação Não Permitida, Saldo Insuficiente");
+                            Console.WriteLine(" ");
+                        }
+                        else
+                        {
+                            cce2 = (cce2 - valPagamento);
+                            Console.Clear();
+                            Console.WriteLine("Pagamento Efetuado com Sucesso! O novo Saldo é de R$ {0}", cce2);
+                            Console.WriteLine(" ");
+                        }
+                    }
+                    else if (opcaoPagamento == 6)
+                    {
+                        Console.WriteLine("O Saldo Disponínel na Conta Selecionada é R$ {0}", cce3);
+                        Console.Write("Informe o Valor da Conta a ser Paga: R$ ");
+                        valPagamento = float.Parse(Console.ReadLine());
+                        testePagamento = cce3 - valPagamento;
+                        if (testePagamento < 0.0)
+                        {
+                            Console.Clear();
+                            Console.WriteLine("Operação Não Permitida, Saldo Insuficiente");
+                            Console.WriteLine(" ");
+                        }
+                        else
+                        {
+                            cce3 = (cce3 - valPagamento);
+                            Console.Clear();
+                            Console.WriteLine("Pagamento Efetuado com Sucesso! O novo Saldo é de R$ {0}", cce3);
+                            Console.WriteLine(" ");
+                        }
+                    }
+                    // Conta Poupança
+                    else if (opcaoPagamento == 7)
+                    {
+                        Console.WriteLine("O Saldo Disponínel na Conta Selecionada é R$ {0}", cp1);
+                        Console.Write("Informe o Valor da Conta a ser Paga: R$ ");
+                        valPagamento = float.Parse(Console.ReadLine());
+                        testePagamento = cp1 - valPagamento;
+                        if (testePagamento < 0.0)
+                        {
+                            Console.Clear();
+                            Console.WriteLine("Operação Não Permitida, Saldo Insuficiente");
+                            Console.WriteLine(" ");
+                        }
+                        else
+                        {
+                            cp1 = (cp1 - valPagamento);
+                            Console.Clear();
+                            Console.WriteLine("Pagamento Efetuado com Sucesso! O novo Saldo é de R$ {0}", cp1);
+                            Console.WriteLine(" ");
+                        }
+                    }
+                    else if (opcaoPagamento == 8)
+                    {
+                        Console.WriteLine("O Saldo Disponínel na Conta Selecionada é R$ {0}", cp2);
+                        Console.Write("Informe o Valor da Conta a ser Paga: R$ ");
+                        valPagamento = float.Parse(Console.ReadLine());
+                        testePagamento = cp2 - valPagamento;
+                        if (testePagamento < 0.0)
+                        {
+                            Console.Clear();
+                            Console.WriteLine("Operação Não Permitida, Saldo Insuficiente");
+                            Console.WriteLine(" ");
+                        }
+                        else
+                        {
+                            cp2 = (cp2 - valPagamento);
+                            Console.Clear();
+                            Console.WriteLine("Pagamento Efetuado com Sucesso! O novo Saldo é de R$ {0}", cp2);
+                            Console.WriteLine(" ");
+                        }
+                    }
+                    else if (opcaoPagamento == 9)
+                    {
+                        Console.WriteLine("O Saldo Disponínel na Conta Selecionada é R$ {0}", cp3);
+                        Console.Write("Informe o Valor da Conta a ser Paga: R$ ");
+                        valPagamento = float.Parse(Console.ReadLine());
+                        testePagamento = cp3 - valPagamento;
+                        if (testePagamento < 0.0)
+                        {
+                            Console.Clear();
+                            Console.WriteLine("Operação Não Permitida, Saldo Insuficiente");
+                            Console.WriteLine(" ");
+                        }
+                        else
+                        {
+                            cp3 = (cp3 - valPagamento);
+                            Console.Clear();
+                            Console.WriteLine("Pagamento Efetuado com Sucesso! O novo Saldo é de R$ {0}", cp3);
+                            Console.WriteLine(" ");
+                        }
                     }
                 }
             }
