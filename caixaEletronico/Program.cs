@@ -19,43 +19,61 @@ namespace caixaEletronico
             Console.WriteLine("Bem Vindo(a) ao terminal de caixa eletrônico do Banco C#!");
 
             Console.WriteLine("Para Iniciar, Informe o Saldo Disponível nas Contas Correntes: ");
+
+            // Saldo conta corrente
+
             Console.Write("Saldo na Conta Corrente 1: ");
             ccc1 = float.Parse(Console.ReadLine());
+
             Console.Write("Saldo na Conta Corrente 2: ");
             ccc2 = float.Parse(Console.ReadLine());
+
             Console.Write("Saldo na Conta Corrente 3: ");
             ccc3 = float.Parse(Console.ReadLine());
 
             Console.Clear();
 
+            // Saldo contas correntes com cheque especial
+
             Console.WriteLine("Informe o Saldo Disponível e o Limite nas Contas Correntes Com Cheque Especial: ");
+
             Console.Write("Saldo na Conta Corrente Com Cheque Especial 1: ");
             cce1 = float.Parse(Console.ReadLine());
+
             Console.Write("Informe o Limite disponível na conta: ");
             l1 = float.Parse(Console.ReadLine());
+
             Console.Write("Saldo na Conta Corrente Com Cheque Especial 2: ");
             cce2 = float.Parse(Console.ReadLine());
+
             Console.Write("Informe o Limite disponível na conta: ");
             l2 = float.Parse(Console.ReadLine());
+
             Console.Write("Saldo na Conta Corrente Com Cheque Especial 3: ");
             cce3 = float.Parse(Console.ReadLine());
+
             Console.Write("Informe o Limite disponível na conta: ");
             l3 = float.Parse(Console.ReadLine());
 
+
             Console.Clear();
 
+            // Saldo conta poupança
+
             Console.WriteLine("Informe o Saldo Disponível nas Contas Poupança: ");
+
             Console.Write("Saldo na Conta Poupança 1: ");
             cp1 = float.Parse(Console.ReadLine());
+
             Console.Write("Saldo na Conta Poupança 2: ");
             cp2 = float.Parse(Console.ReadLine());
+
             Console.Write("Saldo na Conta Poupança 3: ");
             cp3 = float.Parse(Console.ReadLine());
 
             Console.Clear();
 
-            /* O uso do While no Menu garante que ele fique a mostra durante toda a utilização
-             * até que o usuário pressione 6*/
+            // Loop até que o usuário pare, digitando 6
 
             while (opcaoServico < 6)
             {
@@ -73,69 +91,89 @@ namespace caixaEletronico
                 opcaoServico = int.Parse(Console.ReadLine());
                 Console.WriteLine(" ");
 
-                /* Instruções a serem executadas no caso da opção escolhida ser Consulta ao Saldo */
+                /* Consulta de saldo */
 
                 if (opcaoServico == 1)
                 {
                     Console.WriteLine("Qual conta você deseja consultar? ");
                     Console.WriteLine("Contas cadastradas: ");
+
                     Console.WriteLine("(1) - Conta Corrente 1");
                     Console.WriteLine("(2) - Conta Corrente 2");
                     Console.WriteLine("(3) - Conta Corrente 3");
+                    
                     Console.WriteLine("(4) - Conta Corrente Com Cheque Especial 1");
                     Console.WriteLine("(5) - Conta Corrente Com Cheque Especial 2");
                     Console.WriteLine("(6) - Conta Corrente Com Cheque Especial 3");
+
                     Console.WriteLine("(7) - Conta Poupança 1");
                     Console.WriteLine("(8) - Conta Poupança 2");
                     Console.WriteLine("(9) - Conta Poupança 3");
+
                     Console.Write("Escolha a Conta a Ser Consultada: ");
                     opcaoSaldo = int.Parse(Console.ReadLine());
 
+                    // Teste de opção da conta para consultar o saldo
+
                     if (opcaoSaldo == 1)
                         contaSelecionada = ccc1;
+
                     else if (opcaoSaldo == 2)
                         contaSelecionada = ccc2;
+
                     else if (opcaoSaldo == 3)
                         contaSelecionada = ccc3;
+
                     else if (opcaoSaldo == 4)
                         contaSelecionada = cce1;
+
                     else if (opcaoSaldo == 5)
                         contaSelecionada = cce2;
+
                     else if (opcaoSaldo == 6)
                         contaSelecionada = cce3;
+                        
                     else if (opcaoSaldo == 7)
                         contaSelecionada = cp1;
+
                     else if (opcaoSaldo == 8)
                         contaSelecionada = cp2;
+
                     else if (opcaoSaldo == 9)
                         contaSelecionada = cp3;
 
                     Console.Clear();
                     Console.WriteLine("O Saldo Disponível Nesta Conta é de R$ {0}", contaSelecionada);
-                    Console.WriteLine(" ");
+
                 }
-                /* Instruções a serem executadas no caso da opção escolhida ser Saque */
+
+
+                /* Opção saque */
+
+
                 else if (opcaoServico == 2)
                 {
                     Console.WriteLine("De qual Conta Você Deseja Realiza o Saque?");
                     Console.WriteLine("Contas cadastradas: ");
+
                     Console.WriteLine("(1) - Conta Corrente 1");
                     Console.WriteLine("(2) - Conta Corrente 2");
                     Console.WriteLine("(3) - Conta Corrente 3");
+
                     Console.WriteLine("(4) - Conta Corrente Com Cheque Especial 1");
                     Console.WriteLine("(5) - Conta Corrente Com Cheque Especial 2");
                     Console.WriteLine("(6) - Conta Corrente Com Cheque Especial 3");
+                    
                     Console.WriteLine("(7) - Conta Poupança 1");
                     Console.WriteLine("(8) - Conta Poupança 2");
                     Console.WriteLine("(9) - Conta Poupança 3");
+
                     Console.Write("Escolha a Conta a Ser Consultada: ");
                     opcaoSaque = int.Parse(Console.ReadLine());
-                    Console.WriteLine(" ");
+
                     Console.Clear();
 
-                    /* Não sei se existe uma forma mais "compacta" de realizar essas operações, pois
-                     * para cada operação é necessário verificar se o saque não seá maior do que o saldo disponível
-                     * acredito que o modo utilizado na operação de consulta ao saldo não se aplica aqui.*/
+                    // Testes opção de saque por conta
 
                     if (opcaoSaque == 1)
                     {
@@ -198,9 +236,11 @@ namespace caixaEletronico
                             Console.WriteLine(" ");
                         }
                     }
+
                     /* Ainda não sei como o Limite de crédito será considerado nesse trabalho, acredito que, caso o saque
                      * seja maior do que o valor disponível, será utilizado o valor do cheque especial mas como levar isso
                      * em consideração mais pra frente, no caso dos cálculos de Juro sobre a utilização?.*/
+
                     else if (opcaoSaque == 4)
                     {
                         Console.WriteLine("O Saldo Disponínel na Conta Selecionada é R$ {0}", cce1);
@@ -261,7 +301,11 @@ namespace caixaEletronico
                             Console.WriteLine(" ");
                         }
                     }
+
+
                     /* Conta Poupança*/
+
+
                     else if (opcaoSaque == 7)
                     {
                         Console.WriteLine("O Saldo Disponínel na Conta Selecionada é R$ {0}", cp1);
@@ -323,23 +367,32 @@ namespace caixaEletronico
                         }
                     }
                 }
+
+                // Opção de depósito 
+
                 else if (opcaoServico == 3)
                 {
                     Console.WriteLine("De qual Conta Você Deseja Realiza o Depósito?");
                     Console.WriteLine("Contas cadastradas: ");
+
                     Console.WriteLine("(1) - Conta Corrente 1");
                     Console.WriteLine("(2) - Conta Corrente 2");
                     Console.WriteLine("(3) - Conta Corrente 3");
+
                     Console.WriteLine("(4) - Conta Corrente Com Cheque Especial 1");
                     Console.WriteLine("(5) - Conta Corrente Com Cheque Especial 2");
                     Console.WriteLine("(6) - Conta Corrente Com Cheque Especial 3");
+
                     Console.WriteLine("(7) - Conta Poupança 1");
                     Console.WriteLine("(8) - Conta Poupança 2");
                     Console.WriteLine("(9) - Conta Poupança 3");
+
                     Console.Write("Escolha a Conta a Ser Consultada: ");
                     opcaoDeposito = int.Parse(Console.ReadLine());
-                    Console.WriteLine(" ");
+
                     Console.Clear();
+
+                    // Testes para a opção de depósito
 
                     if (opcaoDeposito == 1)
                     {                       
@@ -368,7 +421,9 @@ namespace caixaEletronico
                         Console.WriteLine("Depósito Efetuado com Sucesso! O novo Saldo é de R$ {0}", ccc3);
                         Console.WriteLine(" ");
                     }
+
                     // Conta Corrente com Cheque Especial
+
                     if (opcaoDeposito == 4)
                     {
                         Console.Write("Informe o Valor a ser Depositado: R$ ");
@@ -396,7 +451,9 @@ namespace caixaEletronico
                         Console.WriteLine("Depósito Efetuado com Sucesso! O novo Saldo é de R$ {0}", cce3);
                         Console.WriteLine(" ");
                     }
+
                     // Conta Poupança
+
                     if (opcaoDeposito == 7)
                     {
                         Console.Write("Informe o Valor a ser Depositado: R$ ");
@@ -425,25 +482,34 @@ namespace caixaEletronico
                         Console.WriteLine(" ");
                     }
                 }
-                // Função de Pagamentos (Apenas repliquei a parte de saque pois a lógica é a mesma
+
+                // Função de Pagamentos
+
                 else if (opcaoServico == 4)
                 {
                     Console.WriteLine("Com Qual Conta Você Deseja Realizar o Pagamento?");
                     Console.WriteLine("Contas cadastradas: ");
+
                     Console.WriteLine("(1) - Conta Corrente 1");
                     Console.WriteLine("(2) - Conta Corrente 2");
                     Console.WriteLine("(3) - Conta Corrente 3");
+
                     Console.WriteLine("(4) - Conta Corrente Com Cheque Especial 1");
                     Console.WriteLine("(5) - Conta Corrente Com Cheque Especial 2");
                     Console.WriteLine("(6) - Conta Corrente Com Cheque Especial 3");
+
                     Console.WriteLine("(7) - Conta Poupança 1");
                     Console.WriteLine("(8) - Conta Poupança 2");
                     Console.WriteLine("(9) - Conta Poupança 3");
+
                     Console.Write("Escolha a Conta a Ser Utilizada: ");
                     opcaoPagamento = int.Parse(Console.ReadLine());
-                    Console.WriteLine(" ");
+
+
                     Console.Clear();
                     
+                    // Testes para opção de pagamentos
+
                     if (opcaoPagamento == 1)
                     {
                         Console.WriteLine("O Saldo Disponínel na Conta Selecionada é R$ {0}", ccc1);
@@ -504,7 +570,9 @@ namespace caixaEletronico
                             Console.WriteLine(" ");
                         }
                     }
+
                     // Conta Corrente Com Cheque Especial
+
                     else if (opcaoPagamento == 4)
                     {
                         Console.WriteLine("O Saldo Disponínel na Conta Selecionada é R$ {0}", cce1);
@@ -565,7 +633,9 @@ namespace caixaEletronico
                             Console.WriteLine(" ");
                         }
                     }
+
                     // Conta Poupança
+                    
                     else if (opcaoPagamento == 7)
                     {
                         Console.WriteLine("O Saldo Disponínel na Conta Selecionada é R$ {0}", cp1);
