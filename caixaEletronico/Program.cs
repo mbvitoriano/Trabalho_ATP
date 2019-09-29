@@ -11,8 +11,8 @@ namespace caixaEletronico
             *Conta Poupança (CP) | Limites Conta Cheque especial (L1,L2,L3) */
 
             float ccc1, ccc2, ccc3, cce1, cce2, cce3, l1, l2, l3, cp1, cp2, cp3, contaSelecionada = 0;
-            float valSaque, testeSaque;
-            int opcaoServico = 0, opcaoSaldo, opcaoSaque;
+            float valSaque, valDeposito, testeSaque;
+            int opcaoServico = 0, opcaoSaldo, opcaoSaque, opcaoDeposito;
 
             /* Início das Operações */
 
@@ -321,6 +321,108 @@ namespace caixaEletronico
                             Console.WriteLine("Operação Efetuada com Sucesso! O novo Saldo é de R$ {0}", cp3);
                             Console.WriteLine(" ");
                         }
+                    }
+                }
+                else if (opcaoServico == 3)
+                {
+                    Console.WriteLine("De qual Conta Você Deseja Realiza o Depósito?");
+                    Console.WriteLine("Contas cadastradas: ");
+                    Console.WriteLine("(1) - Conta Corrente 1");
+                    Console.WriteLine("(2) - Conta Corrente 2");
+                    Console.WriteLine("(3) - Conta Corrente 3");
+                    Console.WriteLine("(4) - Conta Corrente Com Cheque Especial 1");
+                    Console.WriteLine("(5) - Conta Corrente Com Cheque Especial 2");
+                    Console.WriteLine("(6) - Conta Corrente Com Cheque Especial 3");
+                    Console.WriteLine("(7) - Conta Poupança 1");
+                    Console.WriteLine("(8) - Conta Poupança 2");
+                    Console.WriteLine("(9) - Conta Poupança 3");
+                    Console.Write("Escolha a Conta a Ser Consultada: ");
+                    opcaoDeposito = int.Parse(Console.ReadLine());
+                    Console.WriteLine(" ");
+                    Console.Clear();
+
+                    if (opcaoDeposito == 1)
+                    {                       
+                        Console.Write("Informe o Valor a ser Depositado: R$ ");
+                        valDeposito = float.Parse(Console.ReadLine());
+                        ccc1 = (ccc1 + valDeposito);
+                        Console.Clear();
+                        Console.WriteLine("Depósito Efetuado com Sucesso! O novo Saldo é de R$ {0}", ccc1);
+                        Console.WriteLine(" ");
+                    }
+                    if (opcaoDeposito == 2)
+                    {
+                        Console.Write("Informe o Valor a ser Depositado: R$ ");
+                        valDeposito = float.Parse(Console.ReadLine());
+                        ccc2 = (ccc2 + valDeposito);
+                        Console.Clear();
+                        Console.WriteLine("Depósito Efetuado com Sucesso! O novo Saldo é de R$ {0}", ccc2);
+                        Console.WriteLine(" ");
+                    }
+                    if (opcaoDeposito == 3)
+                    {
+                        Console.Write("Informe o Valor a ser Depositado: R$ ");
+                        valDeposito = float.Parse(Console.ReadLine());
+                        ccc3 = (ccc3 + valDeposito);
+                        Console.Clear();
+                        Console.WriteLine("Depósito Efetuado com Sucesso! O novo Saldo é de R$ {0}", ccc3);
+                        Console.WriteLine(" ");
+                    }
+                    // Conta Corrente com Cheque Especial
+                    if (opcaoDeposito == 4)
+                    {
+                        Console.Write("Informe o Valor a ser Depositado: R$ ");
+                        valDeposito = float.Parse(Console.ReadLine());
+                        cce1 = (cce1 + valDeposito);
+                        Console.Clear();
+                        Console.WriteLine("Depósito Efetuado com Sucesso! O novo Saldo é de R$ {0}", cce1);
+                        Console.WriteLine(" ");
+                    }
+                    if (opcaoDeposito == 5)
+                    {
+                        Console.Write("Informe o Valor a ser Depositado: R$ ");
+                        valDeposito = float.Parse(Console.ReadLine());
+                        cce2 = (cce2 + valDeposito);
+                        Console.Clear();
+                        Console.WriteLine("Depósito Efetuado com Sucesso! O novo Saldo é de R$ {0}", cce2);
+                        Console.WriteLine(" ");
+                    }
+                    if (opcaoDeposito == 6)
+                    {
+                        Console.Write("Informe o Valor a ser Depositado: R$ ");
+                        valDeposito = float.Parse(Console.ReadLine());
+                        cce3 = (cce3 + valDeposito);
+                        Console.Clear();
+                        Console.WriteLine("Depósito Efetuado com Sucesso! O novo Saldo é de R$ {0}", cce3);
+                        Console.WriteLine(" ");
+                    }
+                    // Conta Poupança
+                    if (opcaoDeposito == 7)
+                    {
+                        Console.Write("Informe o Valor a ser Depositado: R$ ");
+                        valDeposito = float.Parse(Console.ReadLine());
+                        cp1 = (cp1 + valDeposito);
+                        Console.Clear();
+                        Console.WriteLine("Depósito Efetuado com Sucesso! O novo Saldo é de R$ {0}", cp1);
+                        Console.WriteLine(" ");
+                    }
+                    if (opcaoDeposito == 8)
+                    {
+                        Console.Write("Informe o Valor a ser Depositado: R$ ");
+                        valDeposito = float.Parse(Console.ReadLine());
+                        cp2 = (cp2 + valDeposito);
+                        Console.Clear();
+                        Console.WriteLine("Depósito Efetuado com Sucesso! O novo Saldo é de R$ {0}", cp2);
+                        Console.WriteLine(" ");
+                    }
+                    if (opcaoDeposito == 9)
+                    {
+                        Console.Write("Informe o Valor a ser Depositado: R$ ");
+                        valDeposito = float.Parse(Console.ReadLine());
+                        cp3 = (cp3 + valDeposito);
+                        Console.Clear();
+                        Console.WriteLine("Depósito Efetuado com Sucesso! O novo Saldo é de R$ {0}", cp3);
+                        Console.WriteLine(" ");
                     }
                 }
             }
