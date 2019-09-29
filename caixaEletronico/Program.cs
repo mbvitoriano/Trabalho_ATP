@@ -203,10 +203,10 @@ namespace caixaEletronico
                      * em consideração mais pra frente, no caso dos cálculos de Juro sobre a utilização?.*/
                     else if (opcaoSaque == 4)
                     {
-                        Console.WriteLine("O Saldo Disponínel na Conta Selecionada é R$ {0}", ccc3);
+                        Console.WriteLine("O Saldo Disponínel na Conta Selecionada é R$ {0}", cce1);
                         Console.Write("Informe o Valor a ser Sacado: R$ ");
                         valSaque = float.Parse(Console.ReadLine());
-                        testeSaque = ccc3 - valSaque;
+                        testeSaque = cce1 - valSaque;
                         if (testeSaque < 0.0)
                         {
                             Console.Clear();
@@ -215,12 +215,112 @@ namespace caixaEletronico
                         }
                         else
                         {
-                            ccc3 = (ccc3 - valSaque);
+                            cce1 = (cce1 - valSaque);
                             Console.Clear();
-                            Console.WriteLine("Operação Efetuada com Sucesso! O novo Saldo é de R$ {0}", ccc3);
+                            Console.WriteLine("Operação Efetuada com Sucesso! O novo Saldo é de R$ {0}", cce1);
                             Console.WriteLine(" ");
                         }
-
+                    }
+                    else if (opcaoSaque == 5)
+                    {
+                        Console.WriteLine("O Saldo Disponínel na Conta Selecionada é R$ {0}", cce2);
+                        Console.Write("Informe o Valor a ser Sacado: R$ ");
+                        valSaque = float.Parse(Console.ReadLine());
+                        testeSaque = cce2 - valSaque;
+                        if (testeSaque < 0.0)
+                        {
+                            Console.Clear();
+                            Console.WriteLine("Operação Não Permitida, Saldo Insuficiente");
+                            Console.WriteLine(" ");
+                        }
+                        else
+                        {
+                            cce2 = (cce2 - valSaque);
+                            Console.Clear();
+                            Console.WriteLine("Operação Efetuada com Sucesso! O novo Saldo é de R$ {0}", cce2);
+                            Console.WriteLine(" ");
+                        }
+                    }
+                    else if (opcaoSaque == 6)
+                    {
+                        Console.WriteLine("O Saldo Disponínel na Conta Selecionada é R$ {0}", cce3);
+                        Console.Write("Informe o Valor a ser Sacado: R$ ");
+                        valSaque = float.Parse(Console.ReadLine());
+                        testeSaque = cce3 - valSaque;
+                        if (testeSaque < 0.0)
+                        {
+                            Console.Clear();
+                            Console.WriteLine("Operação Não Permitida, Saldo Insuficiente");
+                            Console.WriteLine(" ");
+                        }
+                        else
+                        {
+                            cce3 = (cce3 - valSaque);
+                            Console.Clear();
+                            Console.WriteLine("Operação Efetuada com Sucesso! O novo Saldo é de R$ {0}", cce3);
+                            Console.WriteLine(" ");
+                        }
+                    }
+                    /* Conta Poupança*/
+                    else if (opcaoSaque == 7)
+                    {
+                        Console.WriteLine("O Saldo Disponínel na Conta Selecionada é R$ {0}", cp1);
+                        Console.Write("Informe o Valor a ser Sacado: R$ ");
+                        valSaque = float.Parse(Console.ReadLine());
+                        testeSaque = cp1 - valSaque;
+                        if (testeSaque < 0.0)
+                        {
+                            Console.Clear();
+                            Console.WriteLine("Operação Não Permitida, Saldo Insuficiente");
+                            Console.WriteLine(" ");
+                        }
+                        else
+                        {
+                            cp1 = (cp1 - valSaque);
+                            Console.Clear();
+                            Console.WriteLine("Operação Efetuada com Sucesso! O novo Saldo é de R$ {0}", cp1);
+                            Console.WriteLine(" ");
+                        }
+                    }
+                    else if (opcaoSaque == 8)
+                    {
+                        Console.WriteLine("O Saldo Disponínel na Conta Selecionada é R$ {0}", cp2);
+                        Console.Write("Informe o Valor a ser Sacado: R$ ");
+                        valSaque = float.Parse(Console.ReadLine());
+                        testeSaque = cp2 - valSaque;
+                        if (testeSaque < 0.0)
+                        {
+                            Console.Clear();
+                            Console.WriteLine("Operação Não Permitida, Saldo Insuficiente");
+                            Console.WriteLine(" ");
+                        }
+                        else
+                        {
+                            cp2 = (cp2 - valSaque);
+                            Console.Clear();
+                            Console.WriteLine("Operação Efetuada com Sucesso! O novo Saldo é de R$ {0}", cp2);
+                            Console.WriteLine(" ");
+                        }
+                    }
+                    else if (opcaoSaque == 9)
+                    {
+                        Console.WriteLine("O Saldo Disponínel na Conta Selecionada é R$ {0}", cp3);
+                        Console.Write("Informe o Valor a ser Sacado: R$ ");
+                        valSaque = float.Parse(Console.ReadLine());
+                        testeSaque = cp3 - valSaque;
+                        if (testeSaque < 0.0)
+                        {
+                            Console.Clear();
+                            Console.WriteLine("Operação Não Permitida, Saldo Insuficiente");
+                            Console.WriteLine(" ");
+                        }
+                        else
+                        {
+                            cp3 = (cp3 - valSaque);
+                            Console.Clear();
+                            Console.WriteLine("Operação Efetuada com Sucesso! O novo Saldo é de R$ {0}", cp3);
+                            Console.WriteLine(" ");
+                        }
                     }
                 }
             }
