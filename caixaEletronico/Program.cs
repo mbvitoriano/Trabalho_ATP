@@ -8,7 +8,7 @@ namespace caixaEletronico {
             *Conta Poupança (CP) | Limites Conta Cheque especial (L1,L2,L3) */
 
             float ccc1, ccc2, ccc3, cce1, cce2, cce3, l1, l2, l3, cp1, cp2, cp3, contaSelecionada = 0;
-            float valSaque, valDeposito, valPagamento, testePagamento, testeSaque, quantiaTransferencia;
+            float valSaque, valDeposito, valPagamento, testePagamento, testeSaque, quantiaTransferencia, pagDiv;
             int opcaoServico = 0, opcaoSaldo, opcaoSaque, opcaoDeposito, opcaoPagamento, opcaoTransferencia;
 
             /* Início das Operações */
@@ -429,9 +429,7 @@ namespace caixaEletronico {
 
                 else if (opcaoServico == 4) {
 
-                    // Zerar algumas variáveis que já tinham valores armazenados
-
-                    valPagamento = 0;
+                    valPagamento = 0; // Zerar o valor armazenado.
 
                     Console.WriteLine("Com Qual Conta Você Deseja Realizar o Pagamento?");
                     Console.WriteLine("Contas cadastradas: ");
@@ -454,7 +452,7 @@ namespace caixaEletronico {
 
                     Console.Clear();
 
-                    // Testes para opção de pagamentos
+                    //  - Testes para opção de pagamentos com conta corrente
 
                     if (opcaoPagamento == 1) {
 
@@ -462,36 +460,46 @@ namespace caixaEletronico {
                         Console.Write("Informe o Valor da Conta a ser Paga: R$ ");
                         valPagamento = float.Parse(Console.ReadLine());
 
+                        // Teste para aumentar o limite
+
+                        if(l1 < valPagamento || l2 < valPagamento || l3 < valPagamento){
+                        System.Console.WriteLine("Verificamos que você está fazendo muitos pagamentos e por isso aumentamos os limites das suas contas.");
+                        l1 = l1 + valPagamento;
+                        l2 = l2 + valPagamento;
+                        l3 = l3 + valPagamento;
+                    }
+
                         if (valPagamento > ccc1) {
-                            Console.Clear();
                             testePagamento =  valPagamento - ccc1;
 
-                            if ((cce1+ccc1) >= valPagamento) {
+                            if ((cce1+ccc1) >= valPagamento && l1 >= valPagamento) {
 
                                 cce1 = cce1 - testePagamento;
                                 ccc1 = ccc1 - ccc1;
-                                Console.WriteLine("O valor disponível na sua conta era indisponivel, descontamos o valor necessário da conta com cheque especial um.");
+                                Console.WriteLine("O valor disponível na sua conta era insuficiente, descontamos o valor necessário da conta com cheque especial um.");
                                 testePagamento = 0;
 
-                            }else if ((cce2+ccc1) >= valPagamento) {
+                            }else if ((cce2+ccc1) >= valPagamento && l2 >= valPagamento) {
 
                                 cce2 = (cce2) - testePagamento;
                                 ccc1 = ccc1 - ccc1;
-                                Console.WriteLine("O valor disponível na sua conta era indisponivel, descontamos o valor necessário da conta com cheque especial dois.");
+                                Console.WriteLine("O valor disponível na sua conta era insuficiente, descontamos o valor necessário da conta com cheque especial dois..");
                                 testePagamento = 0;
 
-                            }else if ((cce3+ccc1) >= valPagamento) {
+                            }else if ((cce3+ccc1) >= valPagamento && l3 >= valPagamento) {
 
                                 cce3 = (cce3) - testePagamento;
                                 ccc1 = ccc1 - ccc1;
-                                Console.WriteLine("O valor disponível na sua conta era indisponivel, descontamos o valor necessário da conta com cheque especial três.");
+                                Console.WriteLine("O valor disponível na sua conta era insuficiente, descontamos o valor necessário da conta com cheque especial três.");
                                 testePagamento = 0;
 
                             }else {
-
-                                cce1 = (cce1) - testePagamento;
+                                pagDiv = testePagamento / 3;
+                                cce1 = cce1 - pagDiv;
+                                cce2 = cce2 - pagDiv;
+                                cce3 = cce3 - pagDiv;
                                 ccc1 = ccc1 - ccc1;
-                                Console.WriteLine("Descontamos o valor que estava faltando da sua conta com cheque especial um, seu saldo é negativo.");
+                                Console.WriteLine("Saldo indisponível nas três contas de cheque especial, valor dividido e distribuido nas três contas de cheque especial, automaticamente.");
                                 testePagamento = 0;
 
                             }
@@ -500,7 +508,6 @@ namespace caixaEletronico {
                           else {
 
                             ccc1 = (ccc1 - valPagamento);
-                            Console.Clear();
                             Console.WriteLine("Pagamento Efetuado com Sucesso! O novo Saldo é de R$ {0}", ccc1);
                             Console.WriteLine(" ");
                             testePagamento = 0;
@@ -511,37 +518,48 @@ namespace caixaEletronico {
                         Console.WriteLine("O Saldo Disponínel na Conta Selecionada é R$ {0}", ccc2);
                         Console.Write("Informe o Valor da Conta a ser Paga: R$ ");
                         valPagamento = float.Parse(Console.ReadLine());
+                        
+                        // Teste para aumentar o limite
+
+                        if(l1 < valPagamento || l2 < valPagamento || l3 < valPagamento){
+                        System.Console.WriteLine("Verificamos que você está fazendo muitos pagamentos e por isso aumentamos os limites das suas contas.");
+                        l1 = l1 + valPagamento;
+                        l2 = l2 + valPagamento;
+                        l3 = l3 + valPagamento;
+                    }
 
                         if (valPagamento > ccc2) {
-                            Console.Clear();
                             testePagamento =  valPagamento - ccc2;
 
-                            if ((cce1+ccc2) >= valPagamento) {
+                            if ((cce1+ccc2) >= valPagamento && l1 >= valPagamento) {
 
                                 cce1 = (cce1) - testePagamento;
                                 ccc2 = ccc2 - ccc2;
-                                Console.WriteLine("O valor disponível na sua conta era indisponivel, descontamos o valor necessário da conta com cheque especial um.");
+                                Console.WriteLine("O valor disponível na sua conta era insuficiente, descontamos o valor necessário da conta com cheque especial um.");
                                 testePagamento = 0;
 
-                            }else if ((cce2+ccc2) >= valPagamento) {
+                            }else if ((cce2+ccc2) >= valPagamento && l2 >= valPagamento) {
 
                                 cce2 = (cce2) - testePagamento;
                                 ccc2 = ccc2 - ccc2;
-                                Console.WriteLine("O valor disponível na sua conta era indisponivel, descontamos o valor necessário da conta com cheque especial dois.");
+                                Console.WriteLine("O valor disponível na sua conta era insuficiente, descontamos o valor necessário da conta com cheque especial dois..");
                                 testePagamento = 0;
 
-                            }else if ((cce3+ccc2) >= valPagamento) {
+                            }else if ((cce3+ccc2) >= valPagamento && l3 >= valPagamento) {
 
                                 cce3 = (cce3) - testePagamento;
                                 ccc2 = ccc2 - ccc2;
-                                Console.WriteLine("O valor disponível na sua conta era indisponivel, descontamos o valor necessário da conta com cheque especial três.");
+                                Console.WriteLine("O valor disponível na sua conta era insuficiente, descontamos o valor necessário da conta com cheque especial três.");
                                 testePagamento = 0;
 
                             }else {
 
-                                cce1 = (cce1) - testePagamento;
+                                pagDiv = testePagamento / 3;
+                                cce1 = cce1 - pagDiv;
+                                cce2 = (cce2) - pagDiv;
+                                cce3 = (cce3) - pagDiv;
                                 ccc2 = ccc2 - ccc2;
-                                Console.WriteLine("Descontamos o valor que estava faltando da sua conta com cheque especial um, seu saldo é negativo.");
+                                Console.WriteLine("Saldo indisponível nas três contas de cheque especial, valor dividido e distribuido nas três contas de cheque especial, automaticamente.");
                                 testePagamento = 0;
 
                             }
@@ -550,7 +568,6 @@ namespace caixaEletronico {
                           else {
 
                             ccc2 = (ccc2 - valPagamento);
-                            Console.Clear();
                             Console.WriteLine("Pagamento Efetuado com Sucesso! O novo Saldo é de R$ {0}", ccc2);
                             Console.WriteLine(" ");
                             testePagamento = 0;
@@ -561,37 +578,48 @@ namespace caixaEletronico {
                         Console.WriteLine("O Saldo Disponínel na Conta Selecionada é R$ {0}", ccc3);
                         Console.Write("Informe o Valor da Conta a ser Paga: R$ ");
                         valPagamento = float.Parse(Console.ReadLine());
+                        
+                        // Teste para aumentar o limite
+
+                        if(l1 < valPagamento || l2 < valPagamento || l3 < valPagamento){
+                        System.Console.WriteLine("Verificamos que você está fazendo muitos pagamentos e por isso aumentamos os limites das suas contas.");
+                        l1 = l1 + valPagamento;
+                        l2 = l2 + valPagamento;
+                        l3 = l3 + valPagamento;
+                    }
 
                         if (valPagamento > ccc3) {
-                            Console.Clear();
                             testePagamento =  valPagamento - ccc3;
 
-                            if ((cce1+ccc3) >= valPagamento) {
+                            if ((cce1+ccc3) >= valPagamento && l1 >= valPagamento) {
 
                                 cce1 = (cce1) - testePagamento;
                                 ccc3 = ccc3 - ccc3;
-                                Console.WriteLine("O valor disponível na sua conta era indisponivel, descontamos o valor necessário da conta com cheque especial um.");
+                                Console.WriteLine("O valor disponível na sua conta era insuficiente, descontamos o valor necessário da conta com cheque especial um.");
                                 testePagamento = 0;
 
-                            }else if ((cce2+ccc3) >= valPagamento) {
+                            }else if ((cce2+ccc3) >= valPagamento && l2 >= valPagamento) {
 
                                 cce2 = (cce2) - testePagamento;
                                 ccc3 = ccc3 - ccc3;
-                                Console.WriteLine("O valor disponível na sua conta era indisponivel, descontamos o valor necessário da conta com cheque especial dois.");
+                                Console.WriteLine("O valor disponível na sua conta era insuficiente, descontamos o valor necessário da conta com cheque especial dois..");
                                 testePagamento = 0;
 
-                            }else if ((cce3+ccc3) >= valPagamento) {
+                            }else if ((cce3+ccc3) >= valPagamento && l3 >= valPagamento) {
 
                                 cce3 = (cce3) - testePagamento;
                                 ccc3 = ccc3 - ccc3;
-                                Console.WriteLine("O valor disponível na sua conta era indisponivel, descontamos o valor necessário da conta com cheque especial três.");
+                                Console.WriteLine("O valor disponível na sua conta era insuficiente, descontamos o valor necessário da conta com cheque especial três.");
                                 testePagamento = 0;
 
                             }else {
 
-                                cce1 = (cce1) - testePagamento;
+                                pagDiv = testePagamento / 3;
+                                cce1 = (cce1) - pagDiv;
+                                cce2 = (cce2) - pagDiv;
+                                cce3 = (cce3) - pagDiv;
                                 ccc3 = ccc3 - ccc3;
-                                Console.WriteLine("Descontamos o valor que estava faltando da sua conta com cheque especial um, seu saldo é negativo.");
+                                Console.WriteLine("Saldo indisponível nas três contas de cheque especial, valor dividido e distribuido nas três contas de cheque especial, automaticamente.");
                                 testePagamento = 0;
 
                             }
@@ -600,7 +628,6 @@ namespace caixaEletronico {
                           else {
 
                             ccc3 = (ccc3 - valPagamento);
-                            Console.Clear();
                             Console.WriteLine("Pagamento Efetuado com Sucesso! O novo Saldo é de R$ {0}", ccc3);
                             Console.WriteLine(" ");
                             testePagamento = 0;
@@ -614,35 +641,46 @@ namespace caixaEletronico {
                         Console.WriteLine("O Saldo Disponínel na Conta Selecionada é R$ {0}", cce1);
                         Console.Write("Informe o Valor da Conta a ser Paga: R$ ");
                         valPagamento = float.Parse(Console.ReadLine());
+                        
+                        // Teste para aumentar o limite
+
+                        if(l1 < valPagamento || l2 < valPagamento || l3 < valPagamento){
+                        System.Console.WriteLine("Verificamos que você está fazendo muitos pagamentos e por isso aumentamos os limites das suas contas.");
+                        l1 = l1 + valPagamento;
+                        l2 = l2 + valPagamento;
+                        l3 = l3 + valPagamento;
+                    }
 
                         if (valPagamento > cce1) {
-                            Console.Clear();
                             testePagamento =  valPagamento - cce1;
 
                             if (cce1 >= valPagamento) {
 
                                 cce1 = cce1 - testePagamento;
-                                Console.WriteLine("O valor disponível na sua conta era indisponivel, descontamos o valor necessário da conta com cheque especial um.");
+                                Console.WriteLine("O valor disponível na sua conta era insuficiente, descontamos o valor necessário da conta com cheque especial um.");
                                 testePagamento = 0;
 
                             }else if ((cce2+cce1) >= valPagamento) {
 
                                 cce2 = (cce2) - testePagamento;
                                 cce1 = cce1 - cce1;
-                                Console.WriteLine("O valor disponível na sua conta era indisponivel, descontamos o valor necessário da conta com cheque especial dois.");
+                                Console.WriteLine("O valor disponível na sua conta era insuficiente, descontamos o valor necessário da conta com cheque especial dois..");
                                 testePagamento = 0;
 
                             }else if ((cce3+cce1) >= valPagamento) {
 
                                 cce3 = (cce3) - testePagamento;
                                 cce1 = cce1 - cce1;
-                                Console.WriteLine("O valor disponível na sua conta era indisponivel, descontamos o valor necessário da conta com cheque especial três.");
+                                Console.WriteLine("O valor disponível na sua conta era insuficiente, descontamos o valor necessário da conta com cheque especial três.");
                                 testePagamento = 0;
 
                             }else {
-
-                                cce1 = cce1 - testePagamento;
-                                Console.WriteLine("Descontamos o valor que estava faltando da sua conta com cheque especial um, seu saldo é negativo.");
+                                pagDiv = testePagamento / 3;
+                                cce1 = (cce1) - pagDiv;
+                                cce2 = (cce2) - pagDiv;
+                                cce3 = (cce3) - pagDiv;
+                                cce1 = cce1 - cce1;
+                                Console.WriteLine("Saldo indisponível nas três contas de cheque especial, valor dividido e distribuido nas três contas de cheque especial, automaticamente.");
                                 testePagamento = 0;
 
                             }
@@ -651,7 +689,6 @@ namespace caixaEletronico {
                           else {
 
                             cce1 = (cce1 - valPagamento);
-                            Console.Clear();
                             Console.WriteLine("Pagamento Efetuado com Sucesso! O novo Saldo é de R$ {0}", cce1);
                             Console.WriteLine(" ");
                             testePagamento = 0;
@@ -661,36 +698,47 @@ namespace caixaEletronico {
                         Console.WriteLine("O Saldo Disponínel na Conta Selecionada é R$ {0}", cce2);
                         Console.Write("Informe o Valor da Conta a ser Paga: R$ ");
                         valPagamento = float.Parse(Console.ReadLine());
+                        
+                        // Teste para aumentar o limite
+
+                        if(l1 < valPagamento || l2 < valPagamento || l3 < valPagamento){
+                        System.Console.WriteLine("Verificamos que você está fazendo muitos pagamentos e por isso aumentamos os limites das suas contas.");
+                        l1 = l1 + valPagamento;
+                        l2 = l2 + valPagamento;
+                        l3 = l3 + valPagamento;
+                    }
 
                         if (valPagamento > cce2) {
-                            Console.Clear();
                             testePagamento =  valPagamento - cce2;
 
                             if ((cce2+cce1) >= valPagamento) {
 
                                 cce1 = (cce1) - testePagamento;
                                 cce2 = cce2 - cce2;
-                                Console.WriteLine("O valor disponível na sua conta era indisponivel, descontamos o valor necessário da conta com cheque especial um.");
+                                Console.WriteLine("O valor disponível na sua conta era insuficiente, descontamos o valor necessário da conta com cheque especial um.");
                                 testePagamento = 0;
 
                             }else if (cce2 >= valPagamento) {
 
                                 cce2 = cce2 - testePagamento;
-                                Console.WriteLine("O valor disponível na sua conta era indisponivel, descontamos o valor necessário da conta com cheque especial dois.");
+                                Console.WriteLine("O valor disponível na sua conta era insuficiente, descontamos o valor necessário da conta com cheque especial dois..");
                                 testePagamento = 0;
 
                             }else if ((cce3+cce2) >= valPagamento) {
 
                                 cce3 = (cce3) - testePagamento;
                                 cce2 = cce2 - cce2;
-                                Console.WriteLine("O valor disponível na sua conta era indisponivel, descontamos o valor necessário da conta com cheque especial três.");
+                                Console.WriteLine("O valor disponível na sua conta era insuficiente, descontamos o valor necessário da conta com cheque especial três.");
                                 testePagamento = 0;
 
                             }else {
 
-                                cce1 = (cce1) - testePagamento;
+                                pagDiv = testePagamento / 3;
+                                cce1 = (cce1) - pagDiv;
+                                cce2 = (cce2) - pagDiv;
+                                cce3 = (cce3) - pagDiv;
                                 cce2 = cce2 - cce2;
-                                Console.WriteLine("Descontamos o valor que estava faltando da sua conta com cheque especial um, seu saldo é negativo.");
+                                Console.WriteLine("Saldo indisponível nas três contas de cheque especial, valor dividido e distribuido nas três contas de cheque especial, automaticamente.");
                                 testePagamento = 0;
 
                             }
@@ -699,7 +747,6 @@ namespace caixaEletronico {
                           else {
 
                             cce2 = (cce2 - valPagamento);
-                            Console.Clear();
                             Console.WriteLine("Pagamento Efetuado com Sucesso! O novo Saldo é de R$ {0}", cce2);
                             Console.WriteLine(" ");
                             testePagamento = 0;
@@ -707,43 +754,53 @@ namespace caixaEletronico {
                         }
                     }
 
-                      // Opção de pagamento com Cheque Especial 3
 
                       else if (opcaoPagamento == 6) {
                         Console.WriteLine("O Saldo Disponínel na Conta Selecionada é R$ {0}", cce3);
                         Console.Write("Informe o Valor da Conta a ser Paga: R$ ");
                         valPagamento = float.Parse(Console.ReadLine());
+                        
+                        // Teste para aumentar o limite
+
+                        if(l1 < valPagamento || l2 < valPagamento || l3 < valPagamento){
+                        System.Console.WriteLine("Verificamos que você está fazendo muitos pagamentos e por isso aumentamos os limites das suas contas.");
+                        l1 = l1 + valPagamento;
+                        l2 = l2 + valPagamento;
+                        l3 = l3 + valPagamento;
+                    }
 
                         if (valPagamento > cce3) {
-                            Console.Clear();
                             testePagamento =  valPagamento - cce3;
 
                             if ((cce3+cce1) >= valPagamento) {
 
                                 cce1 = (cce1) - testePagamento;
                                 cce3 = cce3 - cce3;
-                                Console.WriteLine("O valor disponível na sua conta era indisponivel, descontamos o valor necessário da conta com cheque especial um.");
+                                Console.WriteLine("O valor disponível na sua conta era insuficiente, descontamos o valor necessário da conta com cheque especial um.");
                                 testePagamento = 0;
 
                             }else if ((cce3+cce1) >= valPagamento) {
 
                                 cce2 = (cce2) - testePagamento;
                                 cce3 = cce3 - cce3;
-                                Console.WriteLine("O valor disponível na sua conta era indisponivel, descontamos o valor necessário da conta com cheque especial dois.");
+                                Console.WriteLine("O valor disponível na sua conta era insuficiente, descontamos o valor necessário da conta com cheque especial dois..");
                                 testePagamento = 0;
 
                             }else if (cce3 >= valPagamento) {
 
                                 cce3 = cce3 - testePagamento;
                                 cce3 = cce3 - cce3;
-                                Console.WriteLine("O valor disponível na sua conta era indisponivel, descontamos o valor necessário da conta com cheque especial três.");
+                                Console.WriteLine("O valor disponível na sua conta era insuficiente, descontamos o valor necessário da conta com cheque especial três.");
                                 testePagamento = 0;
 
                             }else {
 
-                                cce1 = (cce1 + cce3) - testePagamento;
+                                pagDiv = testePagamento / 3;
+                                cce1 = (cce1) - pagDiv;
+                                cce2 = (cce2) - pagDiv;
+                                cce3 = (cce3) - pagDiv;
                                 cce3 = cce3 - cce3;
-                                Console.WriteLine("Descontamos o valor que estava faltando da sua conta com cheque especial um, seu saldo é negativo.");
+                                Console.WriteLine("Saldo indisponível nas três contas de cheque especial, valor dividido e distribuido nas três contas de cheque especial, automaticamente.");
                                 testePagamento = 0;
 
                             }
@@ -752,50 +809,60 @@ namespace caixaEletronico {
                           else {
 
                             cce3 = (cce3 - valPagamento);
-                            Console.Clear();
                             Console.WriteLine("Pagamento Efetuado com Sucesso! O novo Saldo é de R$ {0}", cce3);
                             Console.WriteLine(" ");
                             testePagamento = 0;
 
                         }
 
-                        //Pagamentos com conta poupança
+                        // Pagamentos com conta poupança
 
                     } else if (opcaoPagamento == 7) {
                         Console.WriteLine("O Saldo Disponínel na Conta Selecionada é R$ {0}", cp1);
                         Console.Write("Informe o Valor da Conta a ser Paga: R$ ");
                         valPagamento = float.Parse(Console.ReadLine());
+                        
+                        // Teste para aumentar o limite
+
+                        if(l1 < valPagamento || l2 < valPagamento || l3 < valPagamento){
+                        System.Console.WriteLine("Verificamos que você está fazendo muitos pagamentos e por isso aumentamos os limites das suas contas.");
+                        l1 = l1 + valPagamento;
+                        l2 = l2 + valPagamento;
+                        l3 = l3 + valPagamento;
+                    }
 
                         if (valPagamento > cp1) {
-                            Console.Clear();
                             testePagamento =  valPagamento - cp1;
 
-                            if ((cce1+cp1) >= valPagamento) {
+                            if ((cce1+cp1) >= valPagamento && l1 >= valPagamento) {
 
                                 cce1 = (cce1) - testePagamento;
                                 cp1 = cp1 - cp1;
-                                Console.WriteLine("O valor disponível na sua conta era indisponivel, descontamos o valor necessário da conta com cheque especial um.");
+                                Console.WriteLine("O valor disponível na sua conta era insuficiente, descontamos o valor necessário da conta com cheque especial um.");
                                 testePagamento = 0;
 
-                            }else if ((cce2+cp1) >= valPagamento) {
+                            }else if ((cce2+cp1) >= valPagamento && l2 >= valPagamento) {
 
                                 cce2 = (cce2) - testePagamento;
                                 cp1 = cp1 - cp1;
-                                Console.WriteLine("O valor disponível na sua conta era indisponivel, descontamos o valor necessário da conta com cheque especial dois.");
+                                Console.WriteLine("O valor disponível na sua conta era insuficiente, descontamos o valor necessário da conta com cheque especial dois..");
                                 testePagamento = 0;
 
-                            }else if ((cce3+cp1) >= valPagamento) {
+                            }else if ((cce3+cp1) >= valPagamento && l3 >= valPagamento) {
 
                                 cce3 = (cce3) - testePagamento;
                                 cp1 = cp1 - cp1;
-                                Console.WriteLine("O valor disponível na sua conta era indisponivel, descontamos o valor necessário da conta com cheque especial três.");
+                                Console.WriteLine("O valor disponível na sua conta era insuficiente, descontamos o valor necessário da conta com cheque especial três.");
                                 testePagamento = 0;
 
                             }else {
 
-                                cce1 = (cce1) - testePagamento;
+                                pagDiv = testePagamento / 3;
+                                cce1 = (cce1) - pagDiv;
+                                cce2 = (cce2) - pagDiv;
+                                cce3 = (cce3) - pagDiv;
                                 cp1 = cp1 - cp1;
-                                Console.WriteLine("Descontamos o valor que estava faltando da sua conta com cheque especial um, seu saldo é negativo.");
+                                Console.WriteLine("Saldo indisponível nas três contas de cheque especial, valor dividido e distribuido nas três contas de cheque especial, automaticamente.");
                                 testePagamento = 0;
 
                             }
@@ -804,7 +871,6 @@ namespace caixaEletronico {
                           else {
 
                             cp1 = (cp1 - valPagamento);
-                            Console.Clear();
                             Console.WriteLine("Pagamento Efetuado com Sucesso! O novo Saldo é de R$ {0}", cp1);
                             Console.WriteLine(" ");
                             testePagamento = 0;
@@ -815,37 +881,48 @@ namespace caixaEletronico {
                         Console.WriteLine("O Saldo Disponínel na Conta Selecionada é R$ {0}", cp2);
                         Console.Write("Informe o Valor da Conta a ser Paga: R$ ");
                         valPagamento = float.Parse(Console.ReadLine());
+                        
+                        // Teste para aumentar o limite
+
+                        if(l1 < valPagamento || l2 < valPagamento || l3 < valPagamento){
+                        System.Console.WriteLine("Verificamos que você está fazendo muitos pagamentos e por isso aumentamos os limites das suas contas.");
+                        l1 = l1 + valPagamento;
+                        l2 = l2 + valPagamento;
+                        l3 = l3 + valPagamento;
+                    }
 
                         if (valPagamento > cp2) {
-                            Console.Clear();
                             testePagamento =  valPagamento - cp2;
 
-                            if ((cce1+cp2) >= valPagamento) {
+                            if ((cce1+cp2) >= valPagamento && l1 >= valPagamento) {
 
                                 cce1 = (cce1) - testePagamento;
                                 cp2 = cp2 - cp2;
-                                Console.WriteLine("O valor disponível na sua conta era indisponivel, descontamos o valor necessário da conta com cheque especial um.");
+                                Console.WriteLine("O valor disponível na sua conta era insuficiente, descontamos o valor necessário da conta com cheque especial um.");
                                 testePagamento = 0;
 
-                            }else if ((cce2+cp2) >= valPagamento) {
+                            }else if ((cce2+cp2) >= valPagamento && l2 >= valPagamento) {
 
                                 cce2 = (cce2) - testePagamento;
                                 cp2 = cp2 - cp2;
-                                Console.WriteLine("O valor disponível na sua conta era indisponivel, descontamos o valor necessário da conta com cheque especial dois.");
+                                Console.WriteLine("O valor disponível na sua conta era insuficiente, descontamos o valor necessário da conta com cheque especial dois..");
                                 testePagamento = 0;
 
-                            }else if ((cce3+cp2) >= valPagamento) {
+                            }else if ((cce3+cp2) >= valPagamento && l3 >= valPagamento) {
 
                                 cce3 = (cce3) - testePagamento;
                                 cp2 = cp2 - cp2;
-                                Console.WriteLine("O valor disponível na sua conta era indisponivel, descontamos o valor necessário da conta com cheque especial três.");
+                                Console.WriteLine("O valor disponível na sua conta era insuficiente, descontamos o valor necessário da conta com cheque especial três.");
                                 testePagamento = 0;
 
                             }else {
 
-                                cce1 = (cce1) - testePagamento;
+                                pagDiv = testePagamento / 3;
+                                cce1 = (cce1) - pagDiv;
+                                cce2 = (cce2) - pagDiv;
+                                cce3 = (cce3) - pagDiv;
                                 cp2 = cp2 - cp2;
-                                Console.WriteLine("Descontamos o valor que estava faltando da sua conta com cheque especial um, seu saldo é negativo.");
+                                Console.WriteLine("Saldo indisponível nas três contas de cheque especial, valor dividido e distribuido nas três contas de cheque especial, automaticamente.");
                                 testePagamento = 0;
 
                             }
@@ -854,7 +931,6 @@ namespace caixaEletronico {
                           else {
 
                             cp2 = (cp2 - valPagamento);
-                            Console.Clear();
                             Console.WriteLine("Pagamento Efetuado com Sucesso! O novo Saldo é de R$ {0}", cp2);
                             Console.WriteLine(" ");
                             testePagamento = 0;
@@ -864,37 +940,48 @@ namespace caixaEletronico {
                         Console.WriteLine("O Saldo Disponínel na Conta Selecionada é R$ {0}", cp3);
                         Console.Write("Informe o Valor da Conta a ser Paga: R$ ");
                         valPagamento = float.Parse(Console.ReadLine());
+                        
+                        // Teste para aumentar o limite
+
+                        if(l1 < valPagamento || l2 < valPagamento || l3 < valPagamento){
+                        System.Console.WriteLine("Verificamos que você está fazendo muitos pagamentos e por isso aumentamos os limites das suas contas.");
+                        l1 = l1 + valPagamento;
+                        l2 = l2 + valPagamento;
+                        l3 = l3 + valPagamento;
+                    }
 
                         if (valPagamento > cp3) {
-                            Console.Clear();
                             testePagamento =  valPagamento - cp3;
 
-                            if ((cce1+cp3) >= valPagamento) {
+                            if ((cce1+cp3) >= valPagamento && l1 >= valPagamento) {
 
                                 cce1 = (cce1) - testePagamento;
                                 cp3 = cp3 - cp3;
-                                Console.WriteLine("O valor disponível na sua conta era indisponivel, descontamos o valor necessário da conta com cheque especial um.");
+                                Console.WriteLine("O valor disponível na sua conta era insuficiente, descontamos o valor necessário da conta com cheque especial um.");
                                 testePagamento = 0;
 
-                            }else if ((cce2+cp3) >= valPagamento) {
+                            }else if ((cce2+cp3) >= valPagamento && l2 >= valPagamento) {
 
                                 cce2 = (cce2) - testePagamento;
                                 cp3 = cp3 - cp3;
-                                Console.WriteLine("O valor disponível na sua conta era indisponivel, descontamos o valor necessário da conta com cheque especial dois.");
+                                Console.WriteLine("O valor disponível na sua conta era insuficiente, descontamos o valor necessário da conta com cheque especial dois..");
                                 testePagamento = 0;
 
-                            }else if ((cce3+cp3) >= valPagamento) {
+                            }else if ((cce3+cp3) >= valPagamento && l3 >= valPagamento) {
 
                                 cce3 = (cce3) - testePagamento;
                                 cp3 = cp3 - cp3;
-                                Console.WriteLine("O valor disponível na sua conta era indisponivel, descontamos o valor necessário da conta com cheque especial três.");
+                                Console.WriteLine("O valor disponível na sua conta era insuficiente, descontamos o valor necessário da conta com cheque especial três.");
                                 testePagamento = 0;
 
                             }else {
 
-                                cce1 = (cce1) - testePagamento;
+                                pagDiv = testePagamento / 3;
+                                cce1 = (cce1) - pagDiv;
+                                cce2 = (cce2) - pagDiv;
+                                cce3 = (cce3) - pagDiv;
                                 cp3 = cp3 - cp3;
-                                Console.WriteLine("Descontamos o valor que estava faltando da sua conta com cheque especial um, seu saldo é negativo.");
+                                Console.WriteLine("Saldo indisponível nas três contas de cheque especial, valor dividido e distribuido nas três contas de cheque especial, automaticamente.");
                                 testePagamento = 0;
 
                             }
@@ -903,7 +990,6 @@ namespace caixaEletronico {
                           else {
 
                             cp3 = (cp3 - valPagamento);
-                            Console.Clear();
                             Console.WriteLine("Pagamento Efetuado com Sucesso! O novo Saldo é de R$ {0}", cp3);
                             Console.WriteLine(" ");
                             testePagamento = 0;
@@ -1719,11 +1805,11 @@ namespace caixaEletronico {
                         }
 
 
+                        }
                     }
                 }
             }
         }
     }
-}
 }
 
