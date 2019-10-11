@@ -8,7 +8,7 @@ namespace caixaEletronico {
             *Conta Poupança (CP) | Limites Conta Cheque especial (L1,L2,L3) */
 
             float ccc1, ccc2, ccc3, cce1, cce2, cce3, l1, l2, l3, cp1, cp2, cp3, contaSelecionada = 0;
-            float valSaque, valDeposito, valPagamento, testeSaque, quantiaTransferencia, juros;
+            float valSaque, valDeposito, valPagamento, testeSaque, quantiaTransferencia, juroCheque, juroPoupanca;
             int opcaoServico = 0, opcaoSaldo, opcaoSaque, opcaoDeposito, opcaoPagamento, opcaoTransferencia, contador = 0;
 
             /* Início das Operações */
@@ -100,31 +100,22 @@ namespace caixaEletronico {
                         
                         Console.Clear();
 
-                        System.Console.Write(" # Antes de continuar, digite a taxa, em porcentagem, de juros que serão aplicadas: ");
-                        juros = int.Parse(Console.ReadLine());
+                        System.Console.Write(" # Antes de continuar, digite a taxa, em porcentagem, do juro do Cheque Especial: ");
+                        juroCheque = int.Parse(Console.ReadLine());
+                        System.Console.Write(" # Por gentileza digite a taxa, em porcentagem, do Rendimento da Poupança: ");
+                        juroPoupanca = int.Parse(Console.ReadLine());
 
-                        // Juros para render a conta corrente
-                        ccc1 = ccc1 + (ccc1 * (juros / 100));
-                        ccc2 = ccc2 + (ccc2 * (juros / 100));
-                        ccc3 = ccc3 + (ccc3 * (juros / 100));
-
-                        // Juros para render a conta com cheque especial
-                        cce1 = cce1 + (cce1 * (juros / 100));
-                        cce2 = cce2 + (cce2 * (juros / 100));
-                        cce3 = cce3 + (cce3 * (juros / 100));
-
-                        // Teste para aumentar os limites
-                        if(cce1 > l1)
-                            l1 = cce1;
-                        else if(cce2 > l2)
-                            l2 = cce2;
-                        else if( cce3 > l3)
-                            l3 = cce3;
                         
+                        // Juros para descontar o valor da utilização do cheque especial
+                        cce1 = cce1 - (l1 * (juroCheque / 100));
+                        cce2 = cce2 - (l2 * (juroCheque / 100));
+                        cce3 = cce3 - (l3 * (juroCheque / 100));
+
+                                                
                         // Juros para render a conta poupança
-                        cp1 = cp1 + (cp1 * (juros / 100));
-                        cp2 = cp2 + (cp2 * (juros / 100));
-                        cp3 = cp3 + (cp3 * (juros / 100));
+                        cp1 = cp1 + (cp1 * (juroPoupanca / 100));
+                        cp2 = cp2 + (cp2 * (juroPoupanca / 100));
+                        cp3 = cp3 + (cp3 * (juroPoupanca / 100));
 
                     }
 
