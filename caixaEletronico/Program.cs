@@ -8,7 +8,7 @@ namespace caixaEletronico {
             *Conta Poupança (CP) | Limites Conta Cheque especial (L1,L2,L3) */
 
             float ccc1, ccc2, ccc3, cce1, cce2, cce3, l1, l2, l3, cp1, cp2, cp3, contaSelecionada = 0;
-            float valSaque, valDeposito, valPagamento, testeSaque, quantiaTransferencia, juroCheque, juroPoupanca;
+            float valSaque, valDeposito, valPagamento, testeSaque, quantiaTransferencia, juroCheque, juroPoupanca, valAntig;
             int opcaoServico = 0, opcaoSaldo, opcaoSaque, opcaoDeposito, opcaoPagamento, opcaoTransferencia, contador = 0;
 
             /* Início das Operações */
@@ -107,11 +107,23 @@ namespace caixaEletronico {
 
                         
                         // Juros para descontar o valor da utilização do cheque especial
-                        cce1 = cce1 - (l1 * (juroCheque / 100));
-                        cce2 = cce2 - (l2 * (juroCheque / 100));
-                        cce3 = cce3 - (l3 * (juroCheque / 100));
+                        if(l1 > cce1)
+                        cce1 = cce1 + (cce1 * (juroCheque / 100));
+                        else
+                        System.Console.WriteLine("Seu saldo não pode ser maior que o limite");
 
-                                                
+                        if(l2 > cce2)
+                        cce2 = cce2 + (cce2 * (juroCheque / 100));
+                        else
+                        System.Console.WriteLine("Seu saldo não pode ser maior que o limite");
+
+                        if(l3 > cce3)
+                        cce3 = cce3 + (cce3 * (juroCheque / 100));
+                        else
+                        System.Console.WriteLine("Seu saldo não pode ser maior que o limite");
+
+
+
                         // Juros para render a conta poupança
                         cp1 = cp1 + (cp1 * (juroPoupanca / 100));
                         cp2 = cp2 + (cp2 * (juroPoupanca / 100));
@@ -250,10 +262,6 @@ namespace caixaEletronico {
                             Console.WriteLine(" ");
                         }
                     }
-
-                      /* Ainda não sei como o Limite de crédito será considerado nesse trabalho, acredito que, caso o saque
-                       * seja maior do que o valor disponível, será utilizado o valor do cheque especial mas como levar isso
-                       * em consideração mais pra frente, no caso dos cálculos de Juro sobre a utilização?.*/
 
                       else if (opcaoSaque == 4) {
                         Console.WriteLine("O Saldo Disponínel na Conta Selecionada é R$ {0}", cce1);
@@ -550,7 +558,18 @@ namespace caixaEletronico {
                         valPagamento = float.Parse(Console.ReadLine());
                     
                         if (valPagamento > cce1) {
-                            Console.WriteLine("Impossível efetuar o pagamento. Utilize outra conta para realizar o pagamento.");
+                            if((cce1 + l1) >= valPagamento){
+                                
+                                valAntig = l1;
+                                l1 = l1 - (valPagamento - cce1);
+                                cce1 = cce1 - cce1;
+                                cce1 = l1 - valAntig;
+                                System.Console.WriteLine("Seu novo saldo é {0}, e possui um limite de {1}", cce1, l1);
+                                
+
+                            }else{
+                                System.Console.WriteLine("Não há limite nem esse valor na sua conta.");
+                            }
                         }  
 
                           else {
@@ -567,7 +586,18 @@ namespace caixaEletronico {
                         valPagamento = float.Parse(Console.ReadLine());
 
                         if (valPagamento > cce2) {
-                            Console.WriteLine("Impossível efetuar o pagamento. Utilize outra conta para realizar o pagamento.");
+                             if((cce2 + l2) >= valPagamento){
+                                
+                                valAntig = l2;
+                                l2 = l2 - (valPagamento - cce2);
+                                cce2 = cce2 - cce2;
+                                cce2 = l2 - valAntig;
+                                System.Console.WriteLine("Seu novo saldo é {0}, e possui um limite de {1}", cce2, l2);
+                                
+
+                            }else{
+                                System.Console.WriteLine("Não há limite nem esse valor na sua conta.");
+                            }
                         }  
 
                           else {
@@ -585,7 +615,18 @@ namespace caixaEletronico {
                         valPagamento = float.Parse(Console.ReadLine());
 
                         if (valPagamento > cce3) {
-                            Console.WriteLine("Impossível efetuar o pagamento. Utilize outra conta para realizar o pagamento.");
+                            if((cce3 + l3) >= valPagamento){
+                                
+                                valAntig = l3;
+                                l3 = l3 - (valPagamento - cce3);
+                                cce3 = cce3 - cce3;
+                                cce3 = l3 - valAntig;
+                                System.Console.WriteLine("Seu novo saldo é {0}, e possui um limite de {1}", cce3, l3);
+                                
+
+                            }else{
+                                System.Console.WriteLine("Não há limite nem esse valor na sua conta.");
+                            }
                         }  
 
                           else {
