@@ -109,18 +109,29 @@ namespace caixaEletronico {
                         // Juros para descontar o valor da utilização do cheque especial
                         if(l1 > cce1)
                         cce1 = cce1 + (cce1 * (juroCheque / 100));
-                        else
-                        System.Console.WriteLine("Seu saldo não pode ser maior que o limite");
+                        else{
+                        System.Console.WriteLine("Seu saldo não pode ser maior que o limite da primeira conta com cheque especial, por isso aumentamos o limite.");
+                        cce1 = cce1 + (cce1 * (juroCheque / 100));
+                        l1 = cce1;
+                        }
 
                         if(l2 > cce2)
                         cce2 = cce2 + (cce2 * (juroCheque / 100));
-                        else
-                        System.Console.WriteLine("Seu saldo não pode ser maior que o limite");
+                        else{
+                        System.Console.WriteLine("Seu saldo não pode ser maior que o limite da segunda conta com cheque especial, por isso aumentamos o limite.");
+                        cce2 = cce2 + (cce2 * (juroCheque / 100));
+                        l2 = cce2;
+                        }
 
                         if(l3 > cce3)
                         cce3 = cce3 + (cce3 * (juroCheque / 100));
-                        else
-                        System.Console.WriteLine("Seu saldo não pode ser maior que o limite");
+                        else{
+
+                        System.Console.WriteLine("Seu saldo não pode ser maior que o limite da terceira conta com cheque especial, por isso aumentamos o limite.");
+                        cce3 = cce3 + (cce3 * (juroCheque / 100));
+                        l3 = cce3;
+
+                        }
 
 
 
@@ -688,6 +699,7 @@ namespace caixaEletronico {
                             Console.WriteLine(" ");
 
                         }
+                }
                 }
 
                 // Serviço de transferência do dinheiro.
@@ -1504,5 +1516,5 @@ namespace caixaEletronico {
             }
         }
     }
-}
+
 
