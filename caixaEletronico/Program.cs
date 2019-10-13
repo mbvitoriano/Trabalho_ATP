@@ -74,15 +74,14 @@ namespace caixaEletronico {
 
             while (opcaoServico < 6) {
                 Console.WriteLine("_____________________________________");
-                Console.WriteLine();
                 Console.WriteLine("Estes são os Serviços Disponíveis: ");
+                System.Console.WriteLine("");
                 Console.WriteLine("(1) - Consultar Saldo");
                 Console.WriteLine("(2) - Efetuar um Saque");
                 Console.WriteLine("(3) - Realizar um Depósito");
                 Console.WriteLine("(4) - Efetuar um Pagamento");
                 Console.WriteLine("(5) - Realizar uma Transferência");
                 Console.WriteLine("(6) - Encerrar");
-
                 Console.WriteLine("_____________________________________");
                 Console.WriteLine();
                 Console.Write("Digite uma opção: ");
@@ -107,31 +106,9 @@ namespace caixaEletronico {
 
                         
                         // Juros para descontar o valor da utilização do cheque especial
-                        if(l1 > cce1)
                         cce1 = cce1 + (cce1 * (juroCheque / 100));
-                        else{
-                        System.Console.WriteLine("Seu saldo não pode ser maior que o limite da primeira conta com cheque especial, por isso aumentamos o limite.");
-                        cce1 = cce1 + (cce1 * (juroCheque / 100));
-                        l1 = cce1;
-                        }
-
-                        if(l2 > cce2)
                         cce2 = cce2 + (cce2 * (juroCheque / 100));
-                        else{
-                        System.Console.WriteLine("Seu saldo não pode ser maior que o limite da segunda conta com cheque especial, por isso aumentamos o limite.");
-                        cce2 = cce2 + (cce2 * (juroCheque / 100));
-                        l2 = cce2;
-                        }
-
-                        if(l3 > cce3)
                         cce3 = cce3 + (cce3 * (juroCheque / 100));
-                        else{
-
-                        System.Console.WriteLine("Seu saldo não pode ser maior que o limite da terceira conta com cheque especial, por isso aumentamos o limite.");
-                        cce3 = cce3 + (cce3 * (juroCheque / 100));
-                        l3 = cce3;
-
-                        }
 
 
 
